@@ -559,7 +559,34 @@ These patterns come from production deployments documented by the OpenClaw commu
 
 Place `USER.md` in each agent's workspace. OpenClaw injects it into the session context automatically.
 
-### 9. Key Workspace Files
+### 9. Daily Files vs MEMORY.md (Official OpenClaw Pattern)
+> This is the **official OpenClaw memory architecture** ([docs](https://docs.openclaw.ai/concepts/memory)). Two-tier system:
+>
+> | Tier | File | What Goes Here | Loaded When |
+> |------|------|---------------|-------------|
+> | **Daily log** | `memory/YYYY-MM-DD.md` | Everything — raw notes, findings, messy context, links | On-demand only (via `memory_search`) |
+> | **Long-term** | `MEMORY.md` | Curated facts, validated patterns, durable rules | **Every session** (costs tokens!) |
+>
+> **Why this matters:**
+> - MEMORY.md is injected into every session context. A 500-line MEMORY.md = 500 lines of tokens burned before the agent does any work.
+> - Daily files are NOT loaded automatically. They're searchable via `memory_search` but don't cost tokens unless the agent explicitly reads them.
+> - **Result:** Write liberally to daily files (free). Curate MEMORY.md carefully (expensive).
+>
+> **How it works in practice:**
+> ```
+> Session runs → agent writes raw findings to memory/2026-03-15.md
+>             → agent promotes key facts to MEMORY.md (1-2 lines)
+>             → commits both to git
+>
+> Next session → agent loads MEMORY.md (small, curated, cheap)
+>             → if needed, searches daily files for historical detail
+> ```
+>
+> **Weekly maintenance:** Human reviews MEMORY.md, prunes outdated entries, archives old daily files. Keep MEMORY.md under 200 lines.
+>
+> **Implementation:** Create `memory/` dir in each agent workspace. Update CLAUDE.md to tell agent the pattern.
+
+### 10. Key Workspace Files
 > Standard workspace files recognized by OpenClaw: ([Source](https://lobehub.com/skills/oabdelmaksoud-openclaw-skills-openclaw-workspace-structure))
 > - `SOUL.md` — agent identity (WHO you are)
 > - `AGENTS.md` — available tools and skills (WHAT you can do)
