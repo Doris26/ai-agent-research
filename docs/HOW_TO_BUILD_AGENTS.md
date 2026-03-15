@@ -523,7 +523,21 @@ These patterns come from production deployments documented by the OpenClaw commu
 > 2. **Discord channel posts** — summaries with hyperlinks
 > 3. **RESEARCH_LEDGER.md** — structured fact table (shared, but not memory)
 
-### 7. Persistent vs Sub-Agents
+### 7. PUA Skill — Stop Agents from Being Lazy
+> Agents have 5 lazy patterns: brute-force retry, blame the user, idle tools, busywork, and passive waiting. The [PUA skill](https://github.com/tanweai/pua) (7.3K stars) forces agents to exhaust all solutions before giving up, using escalating pressure (verbal warning → written feedback → formal PIP → final review).
+>
+> **When to use:** Add to agents that do complex problem-solving (debugging, research, backtesting). Don't add to simple scan/report agents — it adds ~300 lines to context.
+>
+> **Install:**
+> ```bash
+> mkdir -p agents/my-agent/skills/pua
+> curl -s "https://raw.githubusercontent.com/tanweai/pua/main/skills/pua-en/SKILL.md" \
+>   -o agents/my-agent/skills/pua/SKILL.md
+> ```
+>
+> We added PUA to Sage and Forge (trading research agents) but NOT to Scout/Scholar/Analyst (simple scan agents that don't need it).
+
+### 8. Persistent vs Sub-Agents
 > Two patterns: **persistent agents** live forever and map to a Discord bot account (Scout, Scholar, Analyst). **Sub-agents** run once for a specific task then auto-archive (e.g., Forge spawned by Sage for a single backtest). Use `--delete-after-run` for sub-agents. ([Source](https://docs.openclaw.ai/concepts/multi-agent))
 
 ### 8. USER.md — Tell Agents Who You Are
