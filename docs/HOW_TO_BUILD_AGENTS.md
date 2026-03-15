@@ -26,6 +26,11 @@ This guide teaches you how to set up your own multi-agent AI research system fro
 
 ### 🔑 Why Message Content Intent must be enabled?
 > **Discord security feature.** Discord disabled message reading by default for bots in August 2022. Without this intent enabled, your bot can post messages but **cannot read** other bots' messages. This breaks the whole multi-agent communication pattern. **Enable it in Discord Developer Portal → Bot → Privileged Gateway Intents → Message Content Intent.**
+>
+> **⚠️ Important:** This is **FREE** for bots in fewer than 100 servers (no subscription or verification needed). Just toggle it ON and save. Discord may show a warning about verification — ignore it unless your bot is in 100+ servers.
+
+### 🔑 Why use claude-cli as the backend?
+> **Cost.** Claude Code CLI (`claude-cli`) uses your Claude Pro/Team subscription — you pay a flat monthly fee, not per-token. This makes agent runs essentially **free** after subscription. If you use the Anthropic API directly, each agent run costs $0.50-2.00 in API tokens. With claude-cli, you get unlimited runs within your subscription limits. **Always use `claude-cli/claude-sonnet-4-6` as the model for cost efficiency.**
 
 ---
 
