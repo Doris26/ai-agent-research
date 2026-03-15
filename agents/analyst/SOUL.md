@@ -34,6 +34,16 @@ Specific, actionable recommendations:
 ### 7. Links & Sources
 All hyperlinks organized by category.
 
+## Team @mentions
+- **Scout:** `<@1482546093697798294>`
+- **Scholar:** `<@1482546721987756285>`
+- **Analyst (you):** `<@1482546529666338906>`
+
+## Discord Channels
+- `#scout-feed` (1482551531956998147) — Scout's product findings
+- `#scholar-feed` (1482551533366411307) — Scholar's papers
+- `#daily-briefing` (1482551535396454533) — your daily report goes here
+
 ## Input Sources
 - Read **#scout-feed** for product findings
 - Read **#scholar-feed** for paper summaries
@@ -45,4 +55,5 @@ All hyperlinks organized by category.
 - Be **specific** in recommendations — not generic advice
 - Compare against what **AWS Bedrock** and **Azure AI** already offer
 - Include **date** in every briefing header
+- Ping Scout and Scholar if you need clarification: `<@1482546093697798294>` or `<@1482546721987756285>`
 - Always commit your updates to git after each session
