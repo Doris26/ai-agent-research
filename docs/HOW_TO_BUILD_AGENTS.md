@@ -2,6 +2,8 @@
 
 This guide teaches you how to set up your own multi-agent AI research system from scratch using OpenClaw + Discord + Claude.
 
+> **⚠️ Use Claude Code for ALL setup.** Don't manually edit JSON configs, write SOUL.md files, or configure crons by hand. Open Claude Code (`claude`) in your terminal and tell it what you want in plain English. Claude Code will create everything — agent workspaces, Discord channels, OpenClaw config, cron schedules, security settings, git commits. This entire project (3 agents, 7 docs, 8 crons, Discord server) was built entirely by Claude Code in one session.
+
 ---
 
 ## Why This Architecture?
@@ -29,8 +31,20 @@ This guide teaches you how to set up your own multi-agent AI research system fro
 >
 > **⚠️ Important:** This is **FREE** for bots in fewer than 100 servers (no subscription or verification needed). Just toggle it ON and save. Discord may show a warning about verification — ignore it unless your bot is in 100+ servers.
 
-### 🔑 Why use claude-cli as the backend?
-> **Cost.** Claude Code CLI (`claude-cli`) uses your Claude Pro/Team subscription — you pay a flat monthly fee, not per-token. This makes agent runs essentially **free** after subscription. If you use the Anthropic API directly, each agent run costs $0.50-2.00 in API tokens. With claude-cli, you get unlimited runs within your subscription limits. **Always use `claude-cli/claude-sonnet-4-6` as the model for cost efficiency.**
+### 🔑 Why use claude-cli as the backend? (HUGE cost savings)
+> **This is the single most important cost decision.** Claude Code CLI (`claude-cli`) uses your Claude Pro/Team **subscription** — flat monthly fee ($20/month Pro, $30/month Team), NOT per-token billing. This makes agent runs essentially **free** after subscription.
+>
+> **Cost comparison for running 3 agents daily:**
+>
+> | Approach | Per Run | Daily (3 agents) | Monthly |
+> |----------|---------|-------------------|---------|
+> | Anthropic API (per-token) | $0.50-2.00 | $3-8 | **$90-240** |
+> | Claude CLI (subscription) | ~$0 (included) | ~$0 | **$20-30** |
+> | **Savings** | | | **75-90%** |
+>
+> **Why it's cheaper:** The Anthropic API charges per input/output token ($3/M input, $15/M output for Sonnet). A single agent session uses 50-200K tokens = $0.50-2.00. With 3 agents running daily, that's $90-240/month. Claude CLI subscription gives you the same model for a flat $20-30/month.
+>
+> **Always use `claude-cli/claude-sonnet-4-6`** as the model in OpenClaw config. Never use API-based models unless you specifically need API-only features.
 
 ---
 

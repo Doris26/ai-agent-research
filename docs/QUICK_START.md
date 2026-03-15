@@ -2,6 +2,16 @@
 
 Get from zero to an AI agent posting to Discord in 5 minutes. No fluff.
 
+> **⚠️ IMPORTANT: Use Claude Code to set everything up!** Don't manually edit config files or run commands yourself. Open Claude Code (`claude`) in your terminal and tell it what you want. Claude Code will create the files, configure OpenClaw, set up Discord bots, and manage crons for you. This entire project was built by Claude Code — every file, every config, every cron.
+>
+> Example: instead of manually writing `openclaw.json`, just tell Claude Code:
+> ```
+> "Set up OpenClaw with 3 agents: Scout, Scholar, Analyst.
+>  Here are the Discord bot tokens: [tokens].
+>  Server ID: [id]. Create channels and crons."
+> ```
+> Claude Code handles the rest.
+
 ---
 
 ## Prerequisites

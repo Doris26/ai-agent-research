@@ -43,7 +43,9 @@ OpenClaw Gateway (Yujun's Mac)
 
 ## Setup
 
-See [docs/SETUP.md](docs/SETUP.md) for complete setup instructions.
+> **Use Claude Code to set everything up.** Don't manually edit configs — open `claude` in your terminal and describe what you want. Claude Code creates files, configures OpenClaw, sets up Discord bots, and manages crons. This entire project was built by Claude Code.
+
+See [docs/QUICK_START.md](docs/QUICK_START.md) for a 5-minute setup, or [docs/SETUP.md](docs/SETUP.md) for the full guide.
 
 ## Team Guide
 
