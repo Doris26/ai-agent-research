@@ -584,6 +584,15 @@ Place `USER.md` in each agent's workspace. OpenClaw injects it into the session 
 >
 > **Weekly maintenance:** Human reviews MEMORY.md, prunes outdated entries, archives old daily files. Keep MEMORY.md under 200 lines.
 >
+> **中文说明：**
+>
+> 这是 OpenClaw 官方推荐的记忆架构，核心思路是**分层管理**：
+> - **日志文件** (`memory/YYYY-MM-DD.md`)：每次 session 把所有发现、原始数据、链接、想法全部写进去，不用筛选，写多少都行 — **不花 token**（不会自动加载）
+> - **MEMORY.md**：只放**精炼后的关键知识** — 策略结果、团队规则、已验证的 pattern。控制在 200 行以内 — 因为**每次 session 都会加载**，行数 = token 消耗
+> - **每周人工维护**：把日志里重要的内容提炼到 MEMORY.md，删掉过时的条目
+>
+> **为什么这样做？** Agent 每次启动都要读 MEMORY.md，如果 MEMORY.md 有 500 行，每次 session 开头就烧掉 500 行的 token。日志文件不会自动加载，只在 agent 主动搜索时才读取。**写日志免费，写 MEMORY 花钱** — 所以要分开管理。
+>
 > **Implementation:** Create `memory/` dir in each agent workspace. Update CLAUDE.md to tell agent the pattern.
 
 ### 10. Key Workspace Files
