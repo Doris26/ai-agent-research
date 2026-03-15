@@ -471,14 +471,39 @@ These patterns come from production deployments documented by the OpenClaw commu
 ### 3. No Recursion Rule
 > Enforce a strict no-recursion rule — the coordinator (Analyst) should never route tasks back to specialists (Scout/Scholar) that then re-trigger the coordinator. This prevents infinite loops and runaway token costs. ([Source](https://dev.to/operationalneuralnetwork/openclaw-multiagent-best-practices-a-complete-guide-51m5))
 
-### 4. Skill Precedence
-> Skills resolve in order: `<workspace>/skills` (highest) → `~/.openclaw/skills` (shared) → bundled skills (lowest). Put agent-specific skills in the workspace, shared skills in `~/.openclaw/skills`. ([Source](https://docs.openclaw.ai/tools/skills))
+### 4. Per-Agent Skills vs Shared Skills
+> Skills resolve in order: `<workspace>/skills` (highest) → `~/.openclaw/skills` (shared) → bundled skills (lowest). ([Source](https://docs.openclaw.ai/tools/skills))
+>
+> **Use per-agent skills (recommended for small teams).** Each agent only loads skills in its own workspace — fewer skills in context = less token burn. Scout doesn't need backtest-runner, so don't make it shared.
+>
+> **Use shared skills only if ALL agents need it** (e.g., a git-commit skill everyone uses). Otherwise, per-agent wins because:
+> - Less tokens per session (agents don't load irrelevant skills)
+> - Each agent's skills can be tailored to its specific workflow
+> - Small duplication (copy a 20-line SKILL.md) is cheaper than loading 10 unused skills every session
+>
+> | Approach | Token Cost | When to Use |
+> |----------|-----------|-------------|
+> | Per-agent (`<workspace>/skills/`) | Low — only relevant skills loaded | Default. Most skills. |
+> | Shared (`~/.openclaw/skills/`) | Higher — ALL agents load ALL shared skills | Only if every agent needs it |
 
 ### 5. Workspace Isolation
 > Each agent gets its own workspace directory with its own SOUL.md, MEMORY.md, and skills. They share the same Gateway process and config file, but their files are fully isolated. An agent cannot read another agent's workspace unless explicitly told the path. ([Source](https://docs.openclaw.ai/concepts/multi-agent))
 
-### 6. Agent-to-Agent Communication
+### 6. Agent-to-Agent Communication (No Shared Memory!)
 > Agents don't share memory or state directly. They send text messages through Discord channels — just like team members chatting. This is intentional: it forces agents to communicate in human-readable summaries, creating an audit trail and saving tokens. ([Source](https://www.crewclaw.com/blog/openclaw-agent-to-agent-communication))
+>
+> **Should agents read each other's MEMORY.md?** No.
+>
+> | Approach | Pro | Con |
+> |----------|-----|-----|
+> | Read other agent's MEMORY.md | Full context | Huge token cost — loads entire history. Agent sees internal notes not meant for it. Tight coupling — if MEMORY format changes, other agent breaks. |
+> | Communicate via Discord | Cheap, human-readable summaries only | Agent only sees what was explicitly shared. |
+> | Shared RESEARCH_LEDGER.md | Single source of truth for facts | Structured data, not internal reasoning. |
+>
+> **Rule:** Each agent's MEMORY.md is private. Agents share information via:
+> 1. **Discord @mentions** — short, targeted messages
+> 2. **Discord channel posts** — summaries with hyperlinks
+> 3. **RESEARCH_LEDGER.md** — structured fact table (shared, but not memory)
 
 ### 7. Persistent vs Sub-Agents
 > Two patterns: **persistent agents** live forever and map to a Discord bot account (Scout, Scholar, Analyst). **Sub-agents** run once for a specific task then auto-archive (e.g., Forge spawned by Sage for a single backtest). Use `--delete-after-run` for sub-agents. ([Source](https://docs.openclaw.ai/concepts/multi-agent))
