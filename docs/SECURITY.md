@@ -119,13 +119,47 @@ with open("/Users/yujunzou/.openclaw/gemini_api_key") as f:
 api_key = "AIzaSy..."  # NEVER do this
 ```
 
-### Key Locations on This Machine
+### Where to Store Keys (4 Options)
+
+| Option | Best For | Pros | Cons |
+|--------|----------|------|------|
+| **`~/.openclaw/secrets/`** | Personal dev machine | Simple, agents can read files directly, chmod 600 | Manual management, no encryption at rest |
+| **macOS Keychain** | Single-machine secrets | Encrypted, OS-integrated | Agents can't easily read it programmatically |
+| **1Password / Bitwarden CLI** | Teams with existing password manager | Encrypted, shareable, audit trail | Requires CLI setup, adds dependency |
+| **Google Cloud Secret Manager** | Production / GCP teams | Encrypted, IAM-controlled, audit logged, versioned | Requires GCP project, costs ~$0.06/10K access |
+
+**Recommended for development:** `~/.openclaw/secrets/` — simple, agents can read at runtime, no external dependencies.
+
+**Recommended for production/teams:** Google Cloud Secret Manager or 1Password CLI — encrypted, auditable, shareable.
+
+### Setup: `~/.openclaw/secrets/` (Recommended for Dev)
+
+```bash
+# Create secrets dir with restricted permissions
+mkdir -p ~/.openclaw/secrets
+chmod 700 ~/.openclaw/secrets
+
+# Store each key as a separate file
+echo "your-gemini-key" > ~/.openclaw/secrets/gemini_api_key
+echo "your-binance-key" > ~/.openclaw/secrets/binance_api_key
+echo "your-binance-secret" > ~/.openclaw/secrets/binance_secret_key
+chmod 600 ~/.openclaw/secrets/*
+
+# Agents read at runtime:
+# with open(os.path.expanduser("~/.openclaw/secrets/gemini_api_key")) as f:
+#     api_key = f.read().strip()
+```
+
+**Never store in:** git repos, SOUL.md, AGENTS.md, MEMORY.md, Discord messages, environment variables in committed `.env` files.
+
+### Current Key Locations on This Machine
 | Key | Location | NOT in |
 |-----|----------|--------|
 | Gemini API | `~/.openclaw/gemini_api_key` | Any git repo |
 | Discord bot tokens | `~/.openclaw/openclaw.json` | Any git repo |
 | BinanceUS API | `~/.zshrc` env vars | Any git repo |
 | AWS credentials | `~/.aws/credentials` | Any git repo |
+| SSH key | `~/.ssh/openclaw_ec2_codex` | Any git repo |
 
 ### What to Do If a Key is Leaked
 1. **Immediately revoke** the key in the provider's dashboard
