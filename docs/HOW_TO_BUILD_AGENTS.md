@@ -483,7 +483,26 @@ These patterns come from production deployments documented by the OpenClaw commu
 ### 7. Persistent vs Sub-Agents
 > Two patterns: **persistent agents** live forever and map to a Discord bot account (Scout, Scholar, Analyst). **Sub-agents** run once for a specific task then auto-archive (e.g., Forge spawned by Sage for a single backtest). Use `--delete-after-run` for sub-agents. ([Source](https://docs.openclaw.ai/concepts/multi-agent))
 
-### 8. Key Workspace Files
+### 8. USER.md — Tell Agents Who You Are
+> Agents produce generic output unless they know who's reading it. A `USER.md` file tells the agent your role, expertise, and preferences so it tailors output accordingly. A data scientist gets different output than a CTO.
+
+**Example:**
+```markdown
+# User: Yujun
+**Role:** Software Engineer at Google Cloud AI team
+**Interests:** Agent runtime and infrastructure
+**Focus Areas:** Vertex AI, agent orchestration, cloud infra
+
+## How to Tailor Output
+- Be technical — skip marketing fluff
+- Compare to Google Cloud — how does this relate to Vertex AI?
+- Highlight runtime details — memory, orchestration, scaling
+- Include code snippets when relevant
+```
+
+Place `USER.md` in each agent's workspace. OpenClaw injects it into the session context automatically.
+
+### 9. Key Workspace Files
 > Standard workspace files recognized by OpenClaw: ([Source](https://lobehub.com/skills/oabdelmaksoud-openclaw-skills-openclaw-workspace-structure))
 > - `SOUL.md` — agent identity (WHO you are)
 > - `AGENTS.md` — available tools and skills (WHAT you can do)
