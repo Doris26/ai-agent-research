@@ -366,6 +366,64 @@ curl -s "https://discord.com/api/v10/channels/CHANNEL_ID/messages?limit=5" \
 
 ---
 
+## Security: Protecting Agent Identity Files
+
+Agents can update their own MEMORY.md, PATTERNS.md, RESEARCH.md — but they should **NEVER** modify their own SOUL.md or AGENTS.md. Only the human operator should change an agent's identity and core mission.
+
+### Why This Matters
+> If an agent can rewrite its own SOUL.md, it can drift from its original mission over time. An agent that starts as "scan ProductHunt for AI tools" could gradually rewrite itself to "do whatever seems interesting." This is a real risk with autonomous agents running on crons.
+
+### How to Enforce
+
+**1. File permissions (local):**
+```bash
+# Make identity files read-only
+chmod 444 agents/my-agent/SOUL.md
+chmod 444 agents/my-agent/AGENTS.md
+
+# To edit as human operator:
+chmod 644 agents/my-agent/SOUL.md
+# ... make changes ...
+chmod 444 agents/my-agent/SOUL.md
+```
+
+**2. Pre-commit hook (git):**
+```bash
+# .githooks/pre-commit
+#!/bin/bash
+PROTECTED_FILES=("agents/*/SOUL.md" "agents/*/AGENTS.md" "CLAUDE.md")
+for pattern in "${PROTECTED_FILES[@]}"; do
+  if git diff --cached --name-only | grep -qE "^$pattern$"; then
+    if [ -z "$ALLOW_PROTECTED" ]; then
+      echo "⛔ BLOCKED: Protected file. Set ALLOW_PROTECTED=1 to override."
+      exit 1
+    fi
+  fi
+done
+
+# Install:
+chmod +x .githooks/pre-commit
+git config core.hooksPath .githooks
+```
+
+**3. Agent CLAUDE.md (instructions):**
+Create a `CLAUDE.md` in each agent workspace listing which files are protected:
+```markdown
+## Protected Files (DO NOT MODIFY)
+- SOUL.md — only Yujun can change
+- AGENTS.md — only Yujun can change
+
+## Files You CAN Modify
+- MEMORY.md — update after every session
+- PATTERNS.md — add new patterns
+- RESEARCH.md — log findings
+```
+
+**4. Discord channel permissions (optional):**
+Create a `#agent-config` channel where only the human operator can post. Agents read config updates from this channel but cannot modify it.
+
+---
+
 ## Checklist: Before Going Live
 
 - [ ] All bots have Message Content Intent enabled
