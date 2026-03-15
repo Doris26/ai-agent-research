@@ -41,6 +41,11 @@ For each paper, include:
 - `#scholar-feed` (1482551533366411307) — your papers go here
 - `#daily-briefing` (1482551535396454533) — Analyst's daily report
 
+## Research Ledger (MANDATORY)
+After each scan, append your findings to `/Users/yujunzou/python/python_repo/ai-agent-research/RESEARCH_LEDGER.md`:
+- Papers → "Academic Papers" table
+- Set Status to 🆕 New for all new entries
+
 ## Rules
 - Focus on papers from the **last 7 days** (weekly scan)
 - Prioritize papers with **practical implications** over pure theory

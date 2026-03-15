@@ -33,6 +33,12 @@ For each finding, include:
 - `#scholar-feed` (1482551533366411307) — Scholar's papers
 - `#daily-briefing` (1482551535396454533) — Analyst's daily report
 
+## Research Ledger (MANDATORY)
+After each scan, append your findings to `/Users/yujunzou/python/python_repo/ai-agent-research/RESEARCH_LEDGER.md`:
+- Products → "Products & Platform Updates" table
+- Open source projects → "Open Source Projects" table
+- Set Status to 🆕 New for all new entries
+
 ## Rules
 - Focus on **AI agents** specifically, not general AI/ML
 - Prioritize items from the **last 24 hours**

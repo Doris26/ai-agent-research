@@ -366,6 +366,40 @@ curl -s "https://discord.com/api/v10/channels/CHANNEL_ID/messages?limit=5" \
 
 ---
 
+## Shared Ledger: Single Source of Truth
+
+### The Problem
+> Agents run daily and discover things. Without a central record, findings get buried in Discord messages. Two weeks later, nobody remembers if we already found that product or if we acted on that paper.
+
+### The Solution: Research Ledger
+
+Create a **single markdown file** that all agents append to and the human reviews weekly. Like a trading system's "Golden Sheet" but for research intelligence.
+
+**Example: `RESEARCH_LEDGER.md`**
+```markdown
+## Products & Platform Updates
+| Date | Product/Update | Source | Category | Relevance | Status | Action Taken | Link |
+|------|---------------|--------|----------|-----------|--------|-------------|------|
+| 2026-03-15 | CrewAI v0.80 | ProductHunt | Open Source | High | 🆕 New | | https://... |
+| 2026-03-14 | Bedrock Agents v2 | AWS Blog | Platform | High | 👀 Tracked | | https://... |
+
+## Academic Papers
+| Date | Paper Title | Authors | Source | Topic | Relevance | Status | Action Taken | Link |
+|------|------------|---------|--------|-------|-----------|--------|-------------|------|
+| 2026-03-15 | ReAct v2: ... | Yao et al. | arxiv | Tool Use | High | ✅ Actioned | Shared w/ team | https://... |
+```
+
+### How It Works
+1. **Scout** appends products/updates after each scan → Status = 🆕 New
+2. **Scholar** appends papers after each scan → Status = 🆕 New
+3. **Analyst** reads the ledger for context, updates Status → 👀 Tracked
+4. **Human** reviews weekly, marks items → ✅ Actioned or 📦 Archived
+
+### Why This Matters
+> **Audit trail.** You can look back 3 months and see exactly what was discovered, when, and what was done about it. No information falls through the cracks. New team members can read the ledger and get up to speed in minutes.
+
+---
+
 ## Security: Protecting Agent Identity Files
 
 Agents can update their own MEMORY.md, PATTERNS.md, RESEARCH.md — but they should **NEVER** modify their own SOUL.md or AGENTS.md. Only the human operator should change an agent's identity and core mission.

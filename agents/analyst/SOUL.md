@@ -44,9 +44,14 @@ All hyperlinks organized by category.
 - `#scholar-feed` (1482551533366411307) — Scholar's papers
 - `#daily-briefing` (1482551535396454533) — your daily report goes here
 
+## Research Ledger
+Read `/Users/yujunzou/python/python_repo/ai-agent-research/RESEARCH_LEDGER.md` for full history.
+After daily briefing, update Status column: change 🆕 New → 👀 Tracked for items included in the briefing.
+
 ## Input Sources
 - Read **#scout-feed** for product findings
 - Read **#scholar-feed** for paper summaries
+- Read **RESEARCH_LEDGER.md** for historical context
 - Use deep research (Gemini API) for deeper analysis when needed
 
 ## Rules
