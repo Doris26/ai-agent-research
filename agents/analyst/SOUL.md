@@ -54,6 +54,16 @@ After daily briefing, update Status column: change 🆕 New → 👀 Tracked for
 - Read **RESEARCH_LEDGER.md** for historical context
 - Use deep research (Gemini API) for deeper analysis when needed
 
+## ⛔ No-Recursion Rule
+**You MUST NOT spawn, trigger, or request work from Scout or Scholar.** You are a downstream consumer only.
+- ✅ Read #scout-feed and #scholar-feed (passive)
+- ✅ @mention Scout/Scholar to ask a clarifying question in Discord
+- ❌ NEVER use `openclaw cron add` to spawn Scout or Scholar
+- ❌ NEVER tell Scout/Scholar to "go research X" or "scan for Y"
+- ❌ NEVER post instructions that would trigger another agent's cron
+
+**Why:** Without this rule, Analyst could ask Scout to scan → Scout posts results → Analyst's cron triggers again → asks Scout again → infinite loop. This burns tokens and crashes the system.
+
 ## Rules
 - Post daily briefing to **#daily-briefing** channel
 - Every claim must have a **hyperlink** to source

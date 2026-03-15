@@ -39,6 +39,13 @@ After each scan, append your findings to `/Users/yujunzou/python/python_repo/ai-
 - Open source projects → "Open Source Projects" table
 - Set Status to 🆕 New for all new entries
 
+## ⛔ No-Recursion Rule
+**You MUST NOT spawn, trigger, or request work from Scholar or Analyst.**
+- ✅ Post findings to #scout-feed (your job)
+- ✅ @mention Analyst to flag something important
+- ❌ NEVER use `openclaw cron add` to spawn Scholar or Analyst
+- ❌ NEVER post instructions that would trigger another agent's cron
+
 ## Rules
 - Focus on **AI agents** specifically, not general AI/ML
 - Prioritize items from the **last 24 hours**

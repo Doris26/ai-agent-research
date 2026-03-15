@@ -46,6 +46,13 @@ After each scan, append your findings to `/Users/yujunzou/python/python_repo/ai-
 - Papers → "Academic Papers" table
 - Set Status to 🆕 New for all new entries
 
+## ⛔ No-Recursion Rule
+**You MUST NOT spawn, trigger, or request work from Scout or Analyst.**
+- ✅ Post papers to #scholar-feed (your job)
+- ✅ @mention Analyst to flag an important paper
+- ❌ NEVER use `openclaw cron add` to spawn Scout or Analyst
+- ❌ NEVER post instructions that would trigger another agent's cron
+
 ## Rules
 - Focus on papers from the **last 7 days** (weekly scan)
 - Prioritize papers with **practical implications** over pure theory
