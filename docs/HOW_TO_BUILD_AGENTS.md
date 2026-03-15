@@ -458,6 +458,43 @@ Create a `#agent-config` channel where only the human operator can post. Agents 
 
 ---
 
+## Best Practices from the OpenClaw Community
+
+These patterns come from production deployments documented by the OpenClaw community:
+
+### 1. Token Reduction: 40-60% Savings
+> Multi-agent systems reduce token consumption by 40-60% compared to monolithic approaches. Instead of one agent with a massive context window, split work across specialists that communicate via Discord summaries. ([Source](https://dev.to/operationalneuralnetwork/openclaw-multiagent-best-practices-a-complete-guide-51m5))
+
+### 2. Concurrency Limits
+> Don't let 6 agents run simultaneously if 3 will do. Use OpenClaw's `maxConcurrentRuns` config to prevent resource contention. Our setup staggers crons (Scout 8AM → Scholar 8:30AM → Analyst 9:30AM) so they don't overlap. ([Source](https://docs.openclaw.ai/concepts/multi-agent))
+
+### 3. No Recursion Rule
+> Enforce a strict no-recursion rule — the coordinator (Analyst) should never route tasks back to specialists (Scout/Scholar) that then re-trigger the coordinator. This prevents infinite loops and runaway token costs. ([Source](https://dev.to/operationalneuralnetwork/openclaw-multiagent-best-practices-a-complete-guide-51m5))
+
+### 4. Skill Precedence
+> Skills resolve in order: `<workspace>/skills` (highest) → `~/.openclaw/skills` (shared) → bundled skills (lowest). Put agent-specific skills in the workspace, shared skills in `~/.openclaw/skills`. ([Source](https://docs.openclaw.ai/tools/skills))
+
+### 5. Workspace Isolation
+> Each agent gets its own workspace directory with its own SOUL.md, MEMORY.md, and skills. They share the same Gateway process and config file, but their files are fully isolated. An agent cannot read another agent's workspace unless explicitly told the path. ([Source](https://docs.openclaw.ai/concepts/multi-agent))
+
+### 6. Agent-to-Agent Communication
+> Agents don't share memory or state directly. They send text messages through Discord channels — just like team members chatting. This is intentional: it forces agents to communicate in human-readable summaries, creating an audit trail and saving tokens. ([Source](https://www.crewclaw.com/blog/openclaw-agent-to-agent-communication))
+
+### 7. Persistent vs Sub-Agents
+> Two patterns: **persistent agents** live forever and map to a Discord bot account (Scout, Scholar, Analyst). **Sub-agents** run once for a specific task then auto-archive (e.g., Forge spawned by Sage for a single backtest). Use `--delete-after-run` for sub-agents. ([Source](https://docs.openclaw.ai/concepts/multi-agent))
+
+### 8. Key Workspace Files
+> Standard workspace files recognized by OpenClaw: ([Source](https://lobehub.com/skills/oabdelmaksoud-openclaw-skills-openclaw-workspace-structure))
+> - `SOUL.md` — agent identity (WHO you are)
+> - `AGENTS.md` — available tools and skills (WHAT you can do)
+> - `IDENTITY.md` — auto-generated identity card
+> - `USER.md` — info about the human operator
+> - `HEARTBEAT.md` — short checklist/reminders (keep small to limit token burn)
+> - `TOOLS.md` — custom tool definitions
+> - `BOOT.md` — startup instructions
+
+---
+
 ## Checklist: Before Going Live
 
 - [ ] All bots have Message Content Intent enabled
