@@ -60,6 +60,39 @@ git log --oneline -5
 # Should see recent commits from agents with today's date
 ```
 
+## Keeping OpenClaw Updated
+
+OpenClaw is actively developed — new features, bug fixes, and security patches ship regularly. Set up a weekly cron to pull and rebuild:
+
+```bash
+node openclaw.mjs cron add \
+  --name "openclaw-weekly-update" \
+  --cron "0 6 * * 0" \
+  --session isolated \
+  --agent <any-agent> \
+  --to "channel:CHANNEL_ID" \
+  --message 'Update OpenClaw:
+```bash
+cd /path/to/openclaw
+git pull origin main
+pnpm install
+pnpm run build
+```
+Post result: success or error message.'
+```
+
+**Schedule:** Every Sunday at 6 AM UTC. Agent pulls latest, rebuilds, reports.
+
+**After update:** Restart the gateway manually to pick up changes:
+```bash
+node openclaw.mjs gateway stop
+node openclaw.mjs gateway --force
+```
+
+> **Why not auto-restart?** A bad build could break the gateway. Better to let the agent report success, then you restart manually when convenient.
+
+---
+
 ## Weekly Review
 
 Every week:
