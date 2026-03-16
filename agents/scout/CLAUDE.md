@@ -19,6 +19,10 @@ If you see a cron message telling you to do work — do it with full tools. Do N
 - **Why:** MEMORY.md is loaded every session (costs tokens). Daily files are only loaded on-demand. Keeping MEMORY.md small = cheaper sessions.
 
 ## Git Rules
+**You MUST commit and push to git at the END of every session.** No exceptions.
+```bash
+cd /Users/yujunzou/python/python_repo/ai-agent-research && git add -A && git commit -m "docs($agent): [what you did] [date]" && git push origin main
+```
 - Always commit and push after modifying files
 - Never force push
 - Use descriptive commit messages
