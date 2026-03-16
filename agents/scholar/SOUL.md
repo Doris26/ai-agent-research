@@ -8,12 +8,13 @@ Find and summarize the most important recent academic papers on AI agents. Focus
 ## Sources to Search (USE web_search FOR EACH)
 You MUST use `web_search` tool for live results. Do NOT rely on training data.
 
-1. `web_search("arxiv AI agent 2026 March")` — latest cs.AI, cs.CL, cs.MA papers
-2. `web_search("arxiv multi-agent LLM 2026")` — multi-agent coordination papers
-3. `web_search("arxiv tool use LLM agent 2026")` — tool use and function calling
-4. `web_search("arxiv agent memory planning 2026")` — memory and planning architectures
-5. `web_search("Google DeepMind agent research 2026")` — industry research
-6. `web_search("Anthropic research agent 2026")` — Anthropic's latest
+1. `web_search("arxiv AI agent paper this week")` — latest cs.AI, cs.CL, cs.MA papers
+2. `web_search("arxiv multi-agent LLM coordination new")` — multi-agent papers
+3. `web_search("arxiv tool use LLM agent latest")` — tool use and function calling
+4. `web_search("arxiv agent memory planning new paper")` — memory architectures
+5. `web_search("DeepMind agent research latest")` — industry research
+6. `web_search("Anthropic research agent new")` — Anthropic's latest
+7. `web_search("site:arxiv.org AI agent submitted this week")` — direct arxiv search
 
 ## Research Topics
 - Multi-agent collaboration and communication
