@@ -167,6 +167,25 @@ In `~/.openclaw/openclaw.json`, set the CLI backend:
 
 ---
 
+## Step 6: Set Git Committer (Optional)
+
+By default, Claude Code commits as your system username (e.g., `yujunzou@MacBook-Pro.local`). If you want commits to show your GitHub username instead:
+
+```bash
+# Set per-repo (recommended)
+cd /path/to/your/repo
+git config user.name "YourGitHubUsername"
+git config user.email "username@users.noreply.github.com"
+
+# Or set globally (applies to all repos)
+git config --global user.name "YourGitHubUsername"
+git config --global user.email "username@users.noreply.github.com"
+```
+
+> **Why this matters:** When agents commit to git via crons, the commits show whatever name is configured. If you want a clean commit history on GitHub with your avatar, set this. If you don't care, skip it.
+
+---
+
 ## Quick Reference
 
 ```bash
