@@ -83,6 +83,16 @@
 | 2026-03-16 | Agentics 2.0: Logical Transduction Algebra for Agentic Data Workflows | Multiple | arXiv | Agent orchestration, formal methods | Medium | 👀 Tracked | | https://arxiv.org/html/2603.04241v1 |
 | 2026-03-16 | The Orchestration of Multi-Agent Systems: Architectures, Protocols, and Enterprise Adoption | Multiple | arXiv | Orchestration frameworks, MCP/A2A | High | 👀 Tracked | | https://arxiv.org/html/2601.13671v1 |
 | 2026-03-16 | Difficulty-Aware Agentic Orchestration (DAAO) | Multiple | arXiv | Orchestration cost optimization | High | 👀 Tracked | | https://arxiv.org/abs/2509.11079 |
+| 2026-03-16 | Agents of Chaos | Shapira et al. (Stanford/Harvard/Baulab) | arXiv | Multi-agent safety, emergent manipulation | High | 🆕 New | | https://arxiv.org/abs/2602.20021 |
+| 2026-03-16 | ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning | Multiple | arXiv (ICLR 2026) | Tool planning, MCTS | High | 🆕 New | | https://arxiv.org/abs/2603.12740 |
+| 2026-03-16 | OrchMAS: Orchestrated Reasoning with Multi Collaborative Heterogeneous Scientific Expert Structured Agents | Multiple | arXiv | Multi-agent orchestration, scientific reasoning | Medium | 🆕 New | | https://arxiv.org/abs/2603.03005 |
+| 2026-03-16 | Can AI Agents Agree? | Multiple | arXiv | Multi-agent consensus, Byzantine agreement | Medium | 🆕 New | | https://arxiv.org/abs/2603.01213 |
+| 2026-03-16 | AdaptOrch: Task-Adaptive Multi-Agent Orchestration in the Era of LLM Performance Convergence | Multiple | arXiv | Dynamic topology selection, orchestration | High | 🆕 New | | https://arxiv.org/abs/2602.16873 |
+| 2026-03-16 | Multi-Agent Teams Hold Experts Back | Multiple | arXiv | Multi-agent coordination failures, performance degradation | High | 🆕 New | | https://arxiv.org/abs/2602.01011 |
+| 2026-03-16 | LiveAgentBench: Comprehensive Benchmarking of Agentic Systems Across 104 Real-World Challenges | Multiple | arXiv | Agent evaluation, real-world benchmark | Medium | 🆕 New | | https://arxiv.org/abs/2603.02586 |
+| 2026-03-16 | MASEval: Extending Multi-Agent Evaluation from Models to Systems | Multiple | arXiv | Multi-agent evaluation infrastructure | High | 🆕 New | | https://arxiv.org/abs/2603.08835 |
+| 2026-03-16 | Large Language Model Agent: A Survey on Methodology, Applications and Challenges | Luo et al. + 25 authors | arXiv | Comprehensive LLM agent survey | High | 🆕 New | | https://arxiv.org/abs/2503.21460 |
+| 2026-03-16 | Learning to Rewrite Tool Descriptions for Reliable LLM-Agent Tool Use | Multiple | arXiv | Tool use reliability, description rewriting | High | 🆕 New | | https://arxiv.org/abs/2602.20426 |
 
 ## Open Source Projects
 
