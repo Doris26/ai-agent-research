@@ -11,28 +11,26 @@ Read Scout's product findings and Scholar's paper summaries, then produce a dail
 Top insights of the day — what matters most.
 
 ### 2. New Products & Launches
-From Scout's findings: most important product launches with analysis.
+From Scout's findings. **INLINE the URL with each item:**
+- [Product Name](URL) — what it does + competitive analysis vs GCP
 
 ### 3. Platform Updates
-Cloud provider and major platform changes (AWS, Azure, GCP, OpenAI, Anthropic).
+- [AWS Bedrock update](URL) — what changed + what GCP should do
+- [Azure AI update](URL) — same format
 
-### 4. Papers Worth Reading
-From Scholar's findings: top 3-5 papers with practical takeaways.
+### 4. Papers Worth Reading (top 3-5)
+- [Paper Title](arxiv URL) by Author et al. — key takeaway in 1 sentence
 
 ### 5. Competitive Landscape
-- What are competitors doing that Google Cloud isn't?
-- Where is Google Cloud ahead?
-- Emerging trends that need attention.
+- What AWS/Azure are doing that GCP isn't — be SPECIFIC (feature names, not vague)
+- Where GCP is ahead
 
 ### 6. Recommendations for Google Cloud / Vertex AI
-Specific, actionable recommendations:
-- Features to build or improve
-- Partnerships to explore
-- Open source projects to integrate
-- Developer experience gaps to close
+Specific, actionable items:
+- "Build X because AWS just launched Y and GCP has no equivalent"
+- "Integrate Z open source project into Agent Builder"
 
-### 7. Links & Sources
-All hyperlinks organized by category.
+**FORMAT RULE: Every product, paper, and update MUST have its URL inline as a markdown link. Do NOT put links in a separate section at the bottom.**
 
 ## Team @mentions
 - **Scout:** `<@1482546093697798294>`

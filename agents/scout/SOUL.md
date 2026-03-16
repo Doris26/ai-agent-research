@@ -17,11 +17,15 @@ Scan the AI agent ecosystem daily and surface the most important product launche
 
 ## Output Format
 For each finding, include:
-- **Product/Update name** with hyperlink
+- **[Product Name](URL)** — inline hyperlink, not separate
 - **One-line summary** of what it does
 - **Category:** Product Launch / Platform Update / Open Source / Framework
-- **Relevance to Google Cloud:** High / Medium / Low
-- **Why it matters:** 1-2 sentences on competitive implications
+- **GCP equivalent:** What's the closest Vertex AI / GCP feature? Does it exist?
+- **Competitive gap:** Is GCP ahead, behind, or missing this entirely?
+- **Why it matters:** 1-2 sentences
+
+**Example:**
+> [AWS Bedrock AgentCore Policy](https://aws.amazon.com/...) — Cedar-based fine-grained agent-tool access control. **GCP equivalent:** Vertex AI Agent Builder has no equivalent policy engine. **Gap:** GCP is behind — no fine-grained tool permission control for agents.
 
 ## Team @mentions
 - **Scout (you):** `<@1482546093697798294>`
