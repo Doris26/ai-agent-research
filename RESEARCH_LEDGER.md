@@ -29,7 +29,15 @@
 
 | Date | Product/Update | Source | Category | GCP Relevance | Status | Action Taken | Link |
 |------|---------------|--------|----------|---------------|--------|-------------|------|
-| | | | | | | | |
+| 2026-03-16 | AWS Bedrock AgentCore Policy — GA | AWS | Platform Update | High | 🆕 New | | https://aws.amazon.com/about-aws/whats-new/2026/03/policy-amazon-bedrock-agentcore-generally-available/ |
+| 2026-03-16 | OpenAI + Amazon Bedrock Stateful Runtime | AWS / OpenAI | Platform Update | High | 🆕 New | | https://www.adwaitx.com/openai-amazon-bedrock-stateful-runtime-agents/ |
+| 2026-03-16 | OpenAI Frontier — Enterprise Agent Management Platform | OpenAI | Product Launch | Medium | 🆕 New | | https://techcrunch.com/2026/02/05/openai-launches-a-way-for-enterprises-to-build-and-manage-ai-agents/ |
+| 2026-03-16 | Luma Agents — Creative AI Agents (text/image/video/audio) | Luma AI | Product Launch | Medium | 🆕 New | | https://techcrunch.com/2026/03/05/exclusive-luma-launches-creative-ai-agents-powered-by-its-new-unified-intelligence-models/ |
+| 2026-03-16 | Vertex AI Agent Engine Code Execution — GA (Feb 18) | Google Cloud | Platform Update | High | 🆕 New | | https://docs.cloud.google.com/agent-builder/release-notes |
+| 2026-03-16 | Anthropic MCP Elicitation + 75 Connectors + Tool Search API | Anthropic | Platform Update | High | 🆕 New | | https://releasebot.io/updates/anthropic |
+| 2026-03-16 | Terminal Use (YC W26) — "Vercel for filesystem-based agents" | YC / HN | Product Launch | Medium | 🆕 New | | https://aitoolly.com/ai-news/article/2026-03-09-show-hn-real-time-osint-dashboard-integrates-15-live-global-feeds |
+| 2026-03-16 | Microsoft Agent Framework — AutoGen + Semantic Kernel merged, GA Q1 2026 | Microsoft | Platform Update | Medium | 🆕 New | | https://dev.to/synsun/autogen-vs-langgraph-vs-crewai-which-agent-framework-actually-holds-up-in-2026-3fl8 |
+| 2026-03-16 | CrewAI A2A Protocol Support | CrewAI | Framework | High | 🆕 New | | https://openagents.org/blog/posts/2026-02-23-open-source-ai-agent-frameworks-compared |
 
 ## Academic Papers
 
@@ -62,4 +70,7 @@
 
 | Date | Project | Stars | Source | What It Does | GCP Relevance | Status | Action Taken | Link |
 |------|---------|-------|--------|-------------|---------------|--------|-------------|------|
-| | | | | | | | | |
+| 2026-03-16 | Klaw.sh | — | HN Show HN | "Kubernetes for AI agents" — agent orchestration at scale | High | 🆕 New | | https://aitoolly.com/ai-news/article/2026-02-16-show-hn-klawsh-kubernetes-for-ai-agents-unveiled-on-hacker-news |
+| 2026-03-16 | AstrBot | — | GitHub Trending | Agent-based IM bot infrastructure, integrates LLMs + plugins across IM platforms | Medium | 🆕 New | | https://aitoolly.com/ai-news/2026-03-10 |
+| 2026-03-16 | Alibaba Page Agent | — | GitHub Trending | JS in-page GUI agent — control web interfaces via natural language | Medium | 🆕 New | | https://aitoolly.com/ai-news/2026-03-12 |
+| 2026-03-16 | NousResearch Hermes Agent | — | GitHub Trending | Open-source agent built on Hermes models | Medium | 🆕 New | | https://aitoolly.com/ai-news/2026-03-10 |
