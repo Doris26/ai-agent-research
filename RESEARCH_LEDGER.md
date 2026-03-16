@@ -51,6 +51,11 @@
 | 2026-03-16 | Agentic AI Foundation (AAIF) — 97 new members, MCP at 97M monthly SDK downloads | Linux Foundation / Industry | Ecosystem | High | 👀 Tracked | | https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation |
 | 2026-03-16 | OpenAI + AWS $110B deal — Frontier stateful runtime exclusive in Bedrock; Google excluded | OpenAI / AWS | Competitive | High | 👀 Tracked | | https://www.infoq.com/news/2026/03/openai-aws-frontier-stateful/ |
 | 2026-03-16 | MCP Dev Summit NYC — April 2-3, 2026 | Anthropic / AAIF | Event | High | 👀 Tracked | | https://aaif.io/ |
+| 2026-03-16 | NVIDIA Agent Toolkit — Open-source agent platform with OpenShell runtime + AI-Q blueprint (GTC 2026 keynote) | NVIDIA | Platform Launch | High | 🆕 New | | https://nvidianews.nvidia.com/news/ai-agents |
+| 2026-03-16 | NVIDIA OpenShell — Open-source agent runtime with policy-based security, network + privacy guardrails | NVIDIA | Open Source | High | 🆕 New | | https://nvidianews.nvidia.com/news/ai-agents |
+| 2026-03-16 | Microsoft Copilot Cowork — Anthropic Claude + M365 enterprise agentic experience, research preview | Microsoft / Anthropic | Product Launch | Medium | 🆕 New | | https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/ |
+| 2026-03-16 | OpenAI + Anthropic + Google Agent Standards Agreement — Three labs agree to develop interoperable agent standards | OpenAI / Anthropic / Google | Ecosystem | High | 🆕 New | | https://www.theinformation.com/articles/openai-anthropic-google-agree-develop-agent-standards-together |
+| 2026-03-16 | Microsoft Azure Foundry SDK GA — Claude Opus 4.6 + Sonnet 4.6 in Foundry, 1M context, SDK betas across Python/.NET/JS/Java | Microsoft / Anthropic | Platform Update | Medium | 🆕 New | | https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/ |
 
 ## Academic Papers
 
