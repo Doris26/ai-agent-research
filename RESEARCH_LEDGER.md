@@ -93,6 +93,12 @@
 | 2026-03-16 | MASEval: Extending Multi-Agent Evaluation from Models to Systems | Multiple | arXiv | Multi-agent evaluation infrastructure | High | 🆕 New | | https://arxiv.org/abs/2603.08835 |
 | 2026-03-16 | Large Language Model Agent: A Survey on Methodology, Applications and Challenges | Luo et al. + 25 authors | arXiv | Comprehensive LLM agent survey | High | 🆕 New | | https://arxiv.org/abs/2503.21460 |
 | 2026-03-16 | Learning to Rewrite Tool Descriptions for Reliable LLM-Agent Tool Use | Multiple | arXiv | Tool use reliability, description rewriting | High | 🆕 New | | https://arxiv.org/abs/2602.20426 |
+| 2026-03-16 | AutoControl Arena: Synthesizing Executable Test Environments for Frontier AI Risk Evaluation | Multiple | arXiv | Agent safety evaluation, 7 risk categories, 70 scenarios | High | 🆕 New | | https://arxiv.org/abs/2603.07427 |
+| 2026-03-16 | AgentRaft: Automated Detection of Data Over-Exposure in LLM Agents | Multiple | arXiv | Agent privacy, data over-exposure, 57% tool paths at risk | High | 🆕 New | | https://arxiv.org/abs/2603.07557 |
+| 2026-03-16 | AgentServe: Algorithm-System Co-Design for Efficient Agentic AI Serving on a Consumer-Grade GPU | Multiple | arXiv | Agent serving efficiency, 2.8x TTFT improvement, multi-agent scheduling | High | 🆕 New | | https://arxiv.org/abs/2603.10342 |
+| 2026-03-16 | LLM Constitutional Multi-Agent Governance (CMAG) | de Curtò, de Zarzà | arXiv (AMSTA 2026) | Multi-agent governance, Ethical Cooperation Score, manipulation prevention | High | 🆕 New | | https://arxiv.org/abs/2603.13189 |
+| 2026-03-16 | CoMAM: Collaborative Multi-Agent Optimization for Personalized Memory System | Mao et al. | arXiv | Multi-agent memory personalization, joint optimization, local+global reward alignment | High | 🆕 New | | https://arxiv.org/abs/2603.12631 |
+| 2026-03-16 | Why Reasoning Fails to Plan: A Planning-Centric Analysis of Long-Horizon Decision Making in LLM Agents | Multiple | arXiv | Planning vs reasoning gap, FLARE lookahead, long-horizon agent failure modes | High | 🆕 New | | https://arxiv.org/abs/2601.22311 |
 
 ## Open Source Projects
 
