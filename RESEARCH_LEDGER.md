@@ -38,6 +38,19 @@
 | 2026-03-16 | Terminal Use (YC W26) — "Vercel for filesystem-based agents" | YC / HN | Product Launch | Medium | 👀 Tracked | | https://aitoolly.com/ai-news/article/2026-03-09-show-hn-real-time-osint-dashboard-integrates-15-live-global-feeds |
 | 2026-03-16 | Microsoft Agent Framework — AutoGen + Semantic Kernel merged, GA Q1 2026 | Microsoft | Platform Update | Medium | 👀 Tracked | | https://dev.to/synsun/autogen-vs-langgraph-vs-crewai-which-agent-framework-actually-holds-up-in-2026-3fl8 |
 | 2026-03-16 | CrewAI A2A Protocol Support | CrewAI | Framework | High | 👀 Tracked | | https://openagents.org/blog/posts/2026-02-23-open-source-ai-agent-frameworks-compared |
+| 2026-03-16 | Vertex AI Sessions + Memory Bank — GA (billing Feb 11) | Google Cloud | Platform Update | High | 👀 Tracked | | https://docs.cloud.google.com/agent-builder/release-notes |
+| 2026-03-16 | Vertex AI Agent Designer — Low-code visual agent builder (Preview) | Google Cloud | Platform Update | High | 👀 Tracked | | https://cloud.google.com/blog/products/ai-machine-learning/more-ways-to-build-and-scale-ai-agents-with-vertex-ai-agent-builder |
+| 2026-03-16 | ADK `adk deploy` — single-command deploy to Agent Engine | Google Cloud | Platform Update | High | 👀 Tracked | | https://www.infoworld.com/article/4085736/google-boosts-vertex-ai-agent-builder-with-new-observability-and-deployment-tools.html |
+| 2026-03-16 | ADK Go language support (Python + Java + Go) | Google Cloud | Platform Update | Medium | 👀 Tracked | | https://www.infoworld.com/article/4085736/google-boosts-vertex-ai-agent-builder-with-new-observability-and-deployment-tools.html |
+| 2026-03-16 | Vertex AI Agent Engine Observability Dashboard (token, latency, error) | Google Cloud | Platform Update | High | 👀 Tracked | | https://www.infoworld.com/article/4085736/google-boosts-vertex-ai-agent-builder-with-new-observability-and-deployment-tools.html |
+| 2026-03-16 | Vertex AI Agent Engine Evaluation Layer (simulate user interactions) | Google Cloud | Platform Update | High | 👀 Tracked | | https://www.infoworld.com/article/4085736/google-boosts-vertex-ai-agent-builder-with-new-observability-and-deployment-tools.html |
+| 2026-03-16 | Vertex AI Tool Governance / ApiRegistry (admin-managed tool registry) | Google Cloud | Platform Update | High | 👀 Tracked | | https://cloud.google.com/blog/products/ai-machine-learning/new-enhanced-tool-governance-in-vertex-ai-agent-builder |
+| 2026-03-16 | Vertex AI Agent Identity + Cloud IAM + Model Armor (prompt injection defense) | Google Cloud | Platform Update | High | 👀 Tracked | | https://www.infoworld.com/article/4085736/google-boosts-vertex-ai-agent-builder-with-new-observability-and-deployment-tools.html |
+| 2026-03-16 | Vertex AI Gemini Enterprise Agent Registration (custom agents in GE) | Google Cloud | Platform Update | High | 👀 Tracked | | https://www.infoworld.com/article/4085736/google-boosts-vertex-ai-agent-builder-with-new-observability-and-deployment-tools.html |
+| 2026-03-16 | Vertex AI Express Mode — free tier (Gmail + 90-day trial) | Google Cloud | Platform Update | Medium | 👀 Tracked | | https://www.infoworld.com/article/4085736/google-boosts-vertex-ai-agent-builder-with-new-observability-and-deployment-tools.html |
+| 2026-03-16 | Agentic AI Foundation (AAIF) — 97 new members, MCP at 97M monthly SDK downloads | Linux Foundation / Industry | Ecosystem | High | 👀 Tracked | | https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation |
+| 2026-03-16 | OpenAI + AWS $110B deal — Frontier stateful runtime exclusive in Bedrock; Google excluded | OpenAI / AWS | Competitive | High | 👀 Tracked | | https://www.infoq.com/news/2026/03/openai-aws-frontier-stateful/ |
+| 2026-03-16 | MCP Dev Summit NYC — April 2-3, 2026 | Anthropic / AAIF | Event | High | 👀 Tracked | | https://aaif.io/ |
 
 ## Academic Papers
 
