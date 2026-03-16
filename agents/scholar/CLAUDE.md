@@ -26,3 +26,26 @@ cd /Users/yujunzou/python/python_repo/ai-agent-research && git add -A && git com
 - Always commit and push after modifying files
 - Never force push
 - Use descriptive commit messages
+
+## Browser Access
+You have browser access via OpenClaw CLI commands. Use Bash to run these:
+```bash
+# Open a URL
+node openclaw.mjs browser open "https://example.com"
+
+# Take a screenshot
+node openclaw.mjs browser screenshot
+
+# Get page content (accessibility tree)
+node openclaw.mjs browser snapshot
+
+# Click an element by ref number from snapshot
+node openclaw.mjs browser click 12
+
+# Navigate
+node openclaw.mjs browser navigate "https://example.com"
+
+# Get page as text
+node openclaw.mjs browser snapshot --format aria
+```
+Use `browser open` → `browser snapshot` → read content. This works for ProductHunt, arxiv, GitHub, etc.
