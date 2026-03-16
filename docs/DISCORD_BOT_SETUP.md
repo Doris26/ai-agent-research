@@ -45,6 +45,10 @@ In your Discord server, create these text channels:
 - `#daily-briefing` — Analyst posts daily intelligence briefing here
 - `#general` — general discussion
 
+Here's what the final setup looks like with all three bots and channels:
+
+![Discord AI Research Hub — channels and bots in action](../images/discord-scout-feed.png)
+
 Copy each channel's ID (right-click → Copy Channel ID).
 
 ## Step 4: Configure OpenClaw

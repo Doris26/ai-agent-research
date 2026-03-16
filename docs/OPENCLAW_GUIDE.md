@@ -278,6 +278,8 @@ node openclaw.mjs cron add \
 
 Each agent gets its own **Discord bot account** and communicates via **@mentions** in Discord channels. This is a critical design choice:
 
+![Discord AI Research Hub — Scout, Scholar, and Analyst bots communicating via dedicated channels](../images/discord-scout-feed.png)
+
 **Why separate bots (not one shared bot)?**
 - Each bot has its own identity → agents can `@mention` each other
 - Scout posts to `#scout-feed`, Scholar posts to `#scholar-feed`

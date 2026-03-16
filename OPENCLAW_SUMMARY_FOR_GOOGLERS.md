@@ -30,6 +30,10 @@ This repo runs **3 autonomous agents** on a daily cron schedule:
 
 Agents share structured facts via a [Research Ledger](https://github.com/Doris26/ai-agent-research/blob/main/RESEARCH_LEDGER.md) (a markdown table all agents append to). Each agent has its own identity file (`SOUL.md`), memory (`MEMORY.md`), and workspace.
 
+Here's the live Discord server with the three agent bots and their dedicated channels:
+
+![Discord AI Research Hub — Scout posting to #scout-feed with Scholar and Analyst bots visible](images/discord-scout-feed.png)
+
 - [Scout SOUL.md](https://github.com/Doris26/ai-agent-research/blob/main/agents/scout/SOUL.md)
 - [Scholar SOUL.md](https://github.com/Doris26/ai-agent-research/blob/main/agents/scholar/SOUL.md)
 - [Analyst SOUL.md](https://github.com/Doris26/ai-agent-research/blob/main/agents/analyst/SOUL.md)

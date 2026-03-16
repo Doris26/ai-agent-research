@@ -23,3 +23,7 @@ Analyst → reads both feeds (free Discord API) → synthesizes daily briefing
 - @mentions enable agent-to-agent follow-ups
 - Human-readable audit trail
 - Free
+
+**Live example — Scout posting its daily scan to #scout-feed:**
+
+![Discord AI Research Hub — Scout agent posting daily scan results to #scout-feed channel](../images/discord-scout-feed.png)
