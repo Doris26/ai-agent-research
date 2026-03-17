@@ -56,6 +56,14 @@
 | 2026-03-16 | Microsoft Copilot Cowork — Anthropic Claude + M365 enterprise agentic experience, research preview | Microsoft / Anthropic | Product Launch | Medium | 🆕 New | | https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/ |
 | 2026-03-16 | OpenAI + Anthropic + Google Agent Standards Agreement — Three labs agree to develop interoperable agent standards | OpenAI / Anthropic / Google | Ecosystem | High | 🆕 New | | https://www.theinformation.com/articles/openai-anthropic-google-agree-develop-agent-standards-together |
 | 2026-03-16 | Microsoft Azure Foundry SDK GA — Claude Opus 4.6 + Sonnet 4.6 in Foundry, 1M context, SDK betas across Python/.NET/JS/Java | Microsoft / Anthropic | Platform Update | Medium | 🆕 New | | https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/ |
+| 2026-03-17 | Mistral Small 4 — 119B MoE model (Mamba-Transformer hybrid) with multimodal + reasoning, positioned as cost-efficient agentic backbone | Mistral AI | Open Source | Medium | 🆕 New | | https://www.crescendo.ai/news/latest-ai-news-and-updates |
+| 2026-03-17 | Tearline AI Agent Platform — 19M agent-executed transactions milestone, enterprise AI agent infrastructure at scale | Tearline | Platform Update | Medium | 🆕 New | | https://www.swacenews.com/2026/03/17/19m-transactions-and-counting-ai-agents-gain-momentum-as-tearline-delivers-at-scale/ |
+| 2026-03-17 | My Computer by Manus AI — Full computer-use agent; automates files, apps, and workflows via natural language on desktop (#1 ProductHunt) | Manus AI | Product Launch | Medium | 🆕 New | | https://www.producthunt.com/posts/my-computer-by-manus-ai |
+| 2026-03-17 | OpenAI Codex Subagents — Parallel custom subagents for complex multi-step tasks within Codex (product-level, not API) | OpenAI | Product Launch | High | 🆕 New | | https://www.producthunt.com/posts/codex-subagents |
+| 2026-03-17 | mTarsier — Open-source platform for managing MCP servers and clients; developer tooling for MCP ecosystem | Open Source | Framework | High | 🆕 New | | https://www.producthunt.com/posts/mtarsier |
+| 2026-03-17 | Amazon Health AI Agent — Prime members 24/7 free AI health guidance agent (lab interpretation, appointment booking) | Amazon | Product Launch | Low | 🆕 New | | https://www.healthcareittoday.com/2026/03/15/bonus-features-march-15-2026-amazon-and-microsoft-launch-healthcare-ai-agents-plus-23-more-stories/ |
+| 2026-03-17 | Query Memory — "One API for all documents your AI agents need"; developer tool for agent memory/retrieval at document layer | Query Memory | Product Launch | High | 🆕 New | | https://www.producthunt.com/posts/query-memory |
+| 2026-03-17 | Struct — AI agent that root-causes engineering alerts; autonomous incident triage | Struct | Product Launch | Medium | 🆕 New | | https://www.producthunt.com/posts/struct |
 
 ## Academic Papers
 
@@ -108,3 +116,7 @@
 | 2026-03-16 | AstrBot | — | GitHub Trending | Agent-based IM bot infrastructure, integrates LLMs + plugins across IM platforms | Medium | 👀 Tracked | | https://aitoolly.com/ai-news/2026-03-10 |
 | 2026-03-16 | Alibaba Page Agent | — | GitHub Trending | JS in-page GUI agent — control web interfaces via natural language | Medium | 👀 Tracked | | https://aitoolly.com/ai-news/2026-03-12 |
 | 2026-03-16 | NousResearch Hermes Agent | — | GitHub Trending | Open-source agent built on Hermes models | Medium | 👀 Tracked | | https://aitoolly.com/ai-news/2026-03-10 |
+| 2026-03-17 | dimos (dimensionalOS) | — | GitHub Trending | "Proxy Operating System" for AI agents — Dimensional Framework for agent orchestration | High | 🆕 New | | https://github.com/dimensionalOS/dimos |
+| 2026-03-17 | Hindsight (vectorize-io) | — | GitHub Trending | Learning Agent Memory — how agents acquire, store, and retrieve memory over time | High | 🆕 New | | https://github.com/vectorize-io/hindsight |
+| 2026-03-17 | DeerFlow 2.0 (ByteDance) | — | GitHub Trending | Open-source SuperAgent harness for research/coding/creation; uses sandboxes, memories, subagents | High | 🆕 New | | https://github.com/bytedance/deer-flow |
+| 2026-03-17 | AgentProbe | — | Show HN | Real-time observability for coding agents; monitoring and visibility tooling | High | 🆕 New | | https://github.com/vtemian/agentprobe |
