@@ -82,15 +82,27 @@ curl -X POST "https://discord.com/api/v10/channels/CHANNEL_ID/messages" \
 
 Or OpenClaw handles delivery automatically via `--to "channel:ID"` in the cron config.
 
-### How an Agent @mentions Another Agent
+### How @mentions Work (Trigger vs Read)
 
-Include the bot's user ID in the message:
+Two different things:
+- **@mention = TRIGGER** — wakes up the agent, creates a new session
+- **API read = CONTEXT** — agent reads recent messages to understand what happened
 
 ```
-<@1482546093697798294> Scout, can you dig deeper on CrewAI pricing?
+Forge @mentions Sage: "@Sage evaluate results"
+  → OpenClaw creates new Sage session (TRIGGER)
+  → Sage reads Discord API — last 20 messages (CONTEXT)
+  → Sage sees Forge's results, proposals, everything
+  → Sage does the work
 ```
 
-The @mentioned agent responds in its next session (or immediately if `groupPolicy: "open"` allows real-time responses).
+**When to @mention:** Only when you need another agent to ACT. Not for status posts.
+- `@Forge backtest this` → Forge wakes up, reads channel, backtests
+- `@Sage evaluate and continue` → Sage wakes up, reads results, continues
+
+**When NOT to @mention:** Status posts, proposals, results — just post them. Everyone can read the channel via API anytime.
+
+**Config required:** Set `allowBots: "mentions"` in Discord config so bot-to-bot @mentions work. Set `tools.profile: "full"` so agents have tools in @mention sessions.
 
 ---
 
