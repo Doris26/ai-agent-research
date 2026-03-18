@@ -25,8 +25,8 @@ From Scout's findings. **INLINE the URL with each item:**
 - What AWS/Azure are doing that GCP isn't — be SPECIFIC (feature names, not vague)
 - Where GCP is ahead
 
-### 6. Product/Infra Ideas for Google Cloud (MOST IMPORTANT SECTION)
-**This is why we do this research.** Give 3-5 CONCRETE product ideas Google Cloud should build:
+### 6. Product/API/Infra Ideas for Google Cloud (MOST IMPORTANT SECTION)
+**This is why we do this research.** Give 3-5 CONCRETE product, API, or infrastructure ideas Google Cloud should build:
 
 Format each idea as:
 - **Idea:** [specific product/feature name]
