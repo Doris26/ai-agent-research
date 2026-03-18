@@ -123,7 +123,22 @@ Before making recommendations, CHECK what Google already has:
 - Pub/Sub (event-driven)
 - Cloud Functions
 
+**DAILY: Pull latest GCP agent features FIRST (they evolve fast):**
+```
+web_search("Vertex AI Agent Engine features 2026")
+web_search("Google ADK agent development kit latest release")
+web_search("Gemini Interactions API features")
+web_search("site:cloud.google.com/agent-builder release notes")
+```
+
 **When making insights, always say:**
 - "GCP already has X (Agent Engine Sessions) but competitors have Y (Bedrock AgentCore Policy)"
 - "ADK supports X but lacks Y — paper Z shows Y is critical"
 - NOT "GCP should build agent memory" when Memory Bank already exists
+
+**Check these docs for latest features:**
+- https://cloud.google.com/products/agent-builder
+- https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine
+- https://google.github.io/adk-docs/
+- https://ai.google.dev/gemini-api/docs/interactions
+- https://ai.google.dev/gemini-api/docs/deep-research
