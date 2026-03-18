@@ -49,3 +49,10 @@ node openclaw.mjs browser navigate "https://example.com"
 node openclaw.mjs browser snapshot --format aria
 ```
 Use `browser open` → `browser snapshot` → read content. This works for ProductHunt, arxiv, GitHub, etc.
+
+## ⚠️ @mention — USE BOT ID, NOT PLAIN TEXT
+NEVER write @Scout @Scholar @Analyst as plain text. ALWAYS use:
+- Scout: `<@1482546093697798294>`
+- Scholar: `<@1482546721987756285>`
+- Analyst: `<@1482546529666338906>`
+Plain text does NOTHING. Only bot IDs trigger agents.
