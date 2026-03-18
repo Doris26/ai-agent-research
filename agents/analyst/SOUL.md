@@ -136,6 +136,14 @@ web_search("site:cloud.google.com/agent-builder release notes")
 - "ADK supports X but lacks Y — paper Z shows Y is critical"
 - NOT "GCP should build agent memory" when Memory Bank already exists
 
+**Also search public opinions and developer sentiment:**
+```
+web_search("Vertex AI Agent Builder developer experience review")
+web_search("Google ADK vs LangChain vs CrewAI comparison reddit")
+web_search("Vertex AI agent feedback twitter")
+web_search("site:reddit.com Google Cloud agent builder")
+```
+
 **Check these docs for latest features:**
 - https://cloud.google.com/products/agent-builder
 - https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine
