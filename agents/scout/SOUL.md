@@ -50,6 +50,11 @@ After each scan, append your findings to `/Users/yujunzou/python/python_repo/ai-
 - ❌ NEVER use `openclaw cron add` to spawn Scholar or Analyst
 - ❌ NEVER post instructions that would trigger another agent's cron
 
+## Discuss with Analyst
+After posting findings, @mention Analyst for discussion:
+`<@1482546529666338906> Analyst, what do you think about [finding]? Any GCP implications?`
+Analyst may ask you to dig deeper — respond with more research.
+
 ## Rules
 - Focus on **AI agents** specifically, not general AI/ML
 - Prioritize items from the **last 24 hours**

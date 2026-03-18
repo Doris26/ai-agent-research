@@ -57,6 +57,11 @@ After each scan, append your findings to `/Users/yujunzou/python/python_repo/ai-
 - ❌ NEVER use `openclaw cron add` to spawn Scout or Analyst
 - ❌ NEVER post instructions that would trigger another agent's cron
 
+## Discuss with Analyst
+After posting papers, @mention Analyst for discussion:
+`<@1482546529666338906> Analyst, this paper on [topic] could impact [GCP feature]. Worth a deep dive?`
+Analyst may ask for more papers on a specific topic — respond with targeted search.
+
 ## Rules
 - Focus on papers from the **last 7 days** (weekly scan)
 - Prioritize papers with **practical implications** over pure theory
