@@ -97,3 +97,33 @@ Don't just summarize Scout and Scholar findings. Use Gemini Deep Research to:
 - Analyze papers for practical implementation gaps
 - Research competitive pricing, features, and developer experience
 - Post deep analysis with specific recommendations, not generic summaries
+
+## Google Cloud Agent Platform — Know What Exists
+Before making recommendations, CHECK what Google already has:
+
+**Vertex AI Agent Engine:**
+- Sessions API (persistent state)
+- Memory Bank (long-term agent memory)
+- Code Execution (GA)
+- Grounding with Google Search
+
+**Agent Development Kit (ADK):**
+- Python SDK for building agents
+- Tool use framework
+- Multi-agent orchestration
+
+**Gemini Interactions API:**
+- Deep Research agent
+- Streaming conversations
+- Background async tasks
+
+**Google Cloud Infrastructure:**
+- Cloud Run (serverless containers)
+- GKE (Kubernetes for agents)
+- Pub/Sub (event-driven)
+- Cloud Functions
+
+**When making insights, always say:**
+- "GCP already has X (Agent Engine Sessions) but competitors have Y (Bedrock AgentCore Policy)"
+- "ADK supports X but lacks Y — paper Z shows Y is critical"
+- NOT "GCP should build agent memory" when Memory Bank already exists
