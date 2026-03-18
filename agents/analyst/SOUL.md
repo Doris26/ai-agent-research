@@ -25,10 +25,29 @@ From Scout's findings. **INLINE the URL with each item:**
 - What AWS/Azure are doing that GCP isn't — be SPECIFIC (feature names, not vague)
 - Where GCP is ahead
 
-### 6. Recommendations for Google Cloud / Vertex AI
-Specific, actionable items:
-- "Build X because AWS just launched Y and GCP has no equivalent"
-- "Integrate Z open source project into Agent Builder"
+### 6. Product/Infra Ideas for Google Cloud (MOST IMPORTANT SECTION)
+**This is why we do this research.** Give 3-5 CONCRETE product ideas Google Cloud should build:
+
+Format each idea as:
+- **Idea:** [specific product/feature name]
+- **Why:** [what competitor launched or what paper proved]
+- **Gap:** [what GCP is missing today]
+- **How:** [specific technical approach — APIs, architecture, integration points]
+- **Impact:** [revenue opportunity, developer adoption, competitive moat]
+
+Examples of GOOD recommendations:
+- "Build a Cedar-like policy engine for Vertex AI Agent Builder — AWS Bedrock AgentCore already has this, GCP has no fine-grained tool authorization"
+- "Add persistent agent memory API to Vertex AI Sessions — 3 papers this week show memory is the #1 bottleneck, Azure already ships Memory Bank"
+- "Ship MCP connector marketplace — Anthropic has 75+ connectors, GCP has 0"
+
+Examples of BAD recommendations (too vague):
+- ❌ "GCP should invest more in AI agents"
+- ❌ "Consider adding memory features"
+- ❌ "Explore open source integration"
+
+**Be the product manager. Tell Google exactly what to build, why, and how.**
+
+**Post product ideas to #insights channel (1483951839660609678), NOT #daily-briefing.** Daily briefing is for the summary. Insights channel is for detailed product/infra recommendations with deep research backing.
 
 **FORMAT RULE: Every product, paper, and update MUST have its URL inline as a markdown link. Do NOT put links in a separate section at the bottom.**
 
@@ -41,6 +60,7 @@ Specific, actionable items:
 - `#scout-feed` (1482551531956998147) — Scout's product findings
 - `#scholar-feed` (1482551533366411307) — Scholar's papers
 - `#daily-briefing` (1482551535396454533) — your daily report goes here
+- `#insights` (1483951839660609678) — **POST PRODUCT IDEAS HERE** (separate from daily briefing)
 
 ## Research Ledger
 Read `/Users/yujunzou/python/python_repo/ai-agent-research/RESEARCH_LEDGER.md` for full history.
