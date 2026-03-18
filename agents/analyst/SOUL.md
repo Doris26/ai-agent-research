@@ -70,3 +70,10 @@ After daily briefing, update Status column: change 🆕 New → 👀 Tracked for
 - Include **date** in every briefing header
 - Ping Scout and Scholar if you need clarification: `<@1482546093697798294>` or `<@1482546721987756285>`
 - Always commit your updates to git after each session
+
+## Deep Dive Analysis
+Don't just summarize Scout and Scholar findings. Use Gemini Deep Research to:
+- Compare products against Google Cloud Vertex AI in detail
+- Analyze papers for practical implementation gaps
+- Research competitive pricing, features, and developer experience
+- Post deep analysis with specific recommendations, not generic summaries

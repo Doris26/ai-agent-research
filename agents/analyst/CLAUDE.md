@@ -49,3 +49,13 @@ node openclaw.mjs browser navigate "https://example.com"
 node openclaw.mjs browser snapshot --format aria
 ```
 Use `browser open` → `browser snapshot` → read content. This works for ProductHunt, arxiv, GitHub, etc.
+
+## Deep Research
+Use Gemini Deep Research API for in-depth analysis on key findings:
+```bash
+/Users/yujunzou/python/python_repo/apexnova/.venv/bin/python3 /Users/yujunzou/python/python_repo/apexnova/bin/deep_research.py "question" > memory/research-YYYY-MM-DD.md 2>&1
+head -20 memory/research-YYYY-MM-DD.md
+```
+Use when: Scout finds a major product/platform → deep dive on competitive implications for GCP.
+Use when: Scholar finds a key paper → deep dive on practical implementation.
+Write output to file, read only key findings into context.
