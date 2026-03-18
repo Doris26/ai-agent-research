@@ -56,3 +56,6 @@ NEVER write @Scout @Scholar @Analyst as plain text. ALWAYS use:
 - Scholar: `<@1482546721987756285>`
 - Analyst: `<@1482546529666338906>`
 Plain text does NOTHING. Only bot IDs trigger agents.
+
+## Skill
+Read and follow your `paper-scan` skill at `/Users/yujunzou/python/python_repo/ai-agent-research/agents/scholar/skills/paper-scan/SKILL.md` every session.
