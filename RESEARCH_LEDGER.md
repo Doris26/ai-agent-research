@@ -78,6 +78,10 @@
 | 2026-03-19 | Apple Siri Reimagined — context-aware + cross-app agent for 2026; mobile OS-level agent layer | Apple | Product Launch | Medium | 👀 Tracked | | https://9to5mac.com |
 | 2026-03-19 | Ceros AI Trust Layer (Beyond Identity) — runtime policy enforcement for Claude Code / AI coding agents; enterprise agent security | Beyond Identity | Product Launch | High | 👀 Tracked | | https://www.beyondidentity.com |
 | 2026-03-19 | TestSprite 2.1 — agentic testing tool for AI-generated code | TestSprite | Product Launch | Medium | 👀 Tracked | | https://www.producthunt.com/posts/testsprite |
+| 2026-03-19 | 🆕 OpenAI acquires Astral — Ruff/uv/ty Python toolchain team joins OpenAI Codex; open source tools to stay open | OpenAI | Acquisition | High | 👀 Tracked | | https://astral.sh/blog/openai |
+| 2026-03-19 | 🆕 SkyPilot Autoresearch scaling — Claude Code + 16 GPU cluster via SkyPilot; 9x faster than sequential; agent self-optimizes across heterogeneous H100/H200 hardware | SkyPilot / Open Source | Framework | High | 👀 Tracked | | https://blog.skypilot.co/scaling-autoresearch/ |
+| 2026-03-19 | 🆕 Anthropic legal action vs OpenCode — Anthropic sends C&D to OpenCode (anomalyco/opencode); alleges ToS violation for third-party Claude Code harness; PR #18186 merged to comply | Anthropic / OpenCode | Ecosystem | High | 👀 Tracked | | https://github.com/anomalyco/opencode/pull/18186 |
+| 2026-03-19 | 🆕 KittenTTS v0.8 — ONNX-based TTS, 15M–80M params, <25MB int8, CPU-only, 8 voices, 24kHz; edge/agent voice synthesis | KittenML | Open Source | Medium | 👀 Tracked | | https://github.com/KittenML/KittenTTS |
 
 ## Academic Papers
 
