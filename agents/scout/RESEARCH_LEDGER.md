@@ -1,6 +1,33 @@
 # Research Ledger
 
-## 2026-03-18 — Daily Scan
+## 2026-03-18 Evening — Fresh Scan
+
+### NEW Cloud Provider Updates
+| Provider | Update | GCP Equivalent? | Gap? |
+|----------|--------|-----------------|------|
+| Azure | SRE Agent GA — 1,300 agents deployed internally, 35K incidents mitigated, 20K eng-hours saved/month | No equivalent | GAP — GCP has no AI SRE agent product |
+| Azure | Microsoft Agent Framework announced — unified agent building framework | ADK (Agent Development Kit) | Comparable — different ecosystems |
+| Azure | Foundry Portal GA at ai.azure.com — unified interface for agents | Vertex AI Console | Comparable |
+| Azure | Foundry Agent Service private networking (BYO VNet) | VPC Service Controls | Comparable |
+| GCP | Gemini 3 Flash public preview — agentic reasoning + coding | N/A (native) | GCP STRENGTH |
+| GCP | Agent Designer low-code visual builder (Preview) | N/A (native) | GCP STRENGTH |
+| GCP | Cloud API Registry for MCP server management (Preview) | N/A (native) | Catching up on MCP |
+
+### NEW Product Launches
+- **Luma Agents** — creative AI agents with "Unified Intelligence" models for text/image/video/audio generation. API available.
+- **NeuralAgent 2.0 Skills** — ProductHunt launch, desktop computer control agent (sees screen, clicks buttons, manages files)
+- **OpenAI Codex Security** — AI security agent scanning commits for vulnerabilities (1.2M commits scanned, 10,561 high-severity issues found)
+- **Claude Certified Architect (CCA)** — Anthropic's enterprise certification program launched March 12, includes MCP orchestration
+- **Samsung Galaxy S26** — Bixby + Gemini + Perplexity agents for device control via conversation
+
+### NEW Security Alerts
+- **China CNCERT warning on OpenClaw** — flagged "inherently weak default security configurations" as exploitable
+- **Agentic browser phishing** — AI browsers tricked into phishing/scam traps via reasoning manipulation
+- **OpenAI Codex Security findings** — 10,561 high-severity issues across 1.2M commits
+
+---
+
+## 2026-03-18 Afternoon — Daily Scan
 
 ### Cloud Provider Updates
 | Provider | Update | GCP Equivalent? | Gap? |
