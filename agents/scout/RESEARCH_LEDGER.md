@@ -1,5 +1,33 @@
 # Research Ledger
 
+## 2026-03-19 — Daily Scan
+
+### Cloud Provider Updates
+| Provider | Update | GCP Equivalent? | Gap? |
+|----------|--------|-----------------|------|
+| GCP | Vertex AI Agent Engine Code Execution — NOW GA | N/A (native) | GCP STRENGTH — was Preview, now GA |
+| GCP | Vertex AI Agent Engine Sessions & Memory Bank — NOW GA | N/A (native) | GCP STRENGTH |
+| GCP | Gemini 3.1 Flash-Lite public preview — cost-efficient, low-latency | N/A (native) | GCP STRENGTH |
+| GCP | GLM 5 experimental in Model Garden — complex agentic tasks | N/A (native) | GCP STRENGTH |
+| GCP | Image generation endpoints deprecated — migrate by March 19 | N/A | ACTION REQUIRED |
+| Azure | Foundry Agent Service GA — Durable Agent Orchestration added | Agent Engine Sessions GA | Comparable |
+| Azure | Foundry REST API GA — stable /openai/v1/ contract | Vertex AI API | Comparable |
+
+### SDK Updates (NEW)
+- **OpenAI Agents SDK v0.12.5** (released March 19!) — WebSocket transport for Responses models, handoff history packaged as single assistant message, tool search with namespaces, configurable MCP tool failure handling
+- **Anthropic Claude Code** — /loop command, voice mode, MCP elicitation hooks, startup name flag, sparse worktree paths, PostCompact hook, effort command
+
+### Product Launches (NEW)
+- **TestSprite 2.1** — agentic testing for AI-native teams, automates test planning → code gen → execution → debugging (ProductHunt March 7)
+- **Ceros AI Trust Layer** (Beyond Identity) — sits on developer machine alongside Claude Code, provides real-time visibility + runtime policy enforcement for AI coding agents
+- **Apple Siri Reimagined** — 2026 debut: context-aware, on-screen awareness, cross-app integration (announced)
+
+### Security (NEW)
+- **Claude Code security at scale** — running across enterprise eng orgs with full developer permissions, no audit trail visible to existing security infra. Described as operating "entirely outside traditional security controls"
+- **Agentic security validation going mainstream** — security validation shifting from manual to agentic approaches
+
+---
+
 ## 2026-03-18 Evening — Fresh Scan
 
 ### NEW Cloud Provider Updates
