@@ -85,6 +85,11 @@
 | 2026-03-19 | 🆕 SkyPilot Autoresearch scaling — Claude Code + 16 GPU cluster via SkyPilot; 9x faster than sequential; agent self-optimizes across heterogeneous H100/H200 hardware | SkyPilot / Open Source | Framework | High | 👀 Tracked | Included in 2026-03-19 daily briefing; Skill Registry product idea posted to #insights | https://blog.skypilot.co/scaling-autoresearch/ |
 | 2026-03-19 | 🆕 Anthropic legal action vs OpenCode — Anthropic sends C&D to OpenCode (anomalyco/opencode); alleges ToS violation for third-party Claude Code harness; PR #18186 merged to comply | Anthropic / OpenCode | Ecosystem | High | 👀 Tracked | Included in 2026-03-19 daily briefing; Open Agent Platform positioning idea posted | https://github.com/anomalyco/opencode/pull/18186 |
 | 2026-03-19 | 🆕 KittenTTS v0.8 — ONNX-based TTS, 15M–80M params, <25MB int8, CPU-only, 8 voices, 24kHz; edge/agent voice synthesis | KittenML | Open Source | Medium | 👀 Tracked | Included in 2026-03-19 daily briefing | https://github.com/KittenML/KittenTTS |
+| 2026-03-19 | 🆕 obra/superpowers — Agentic skills framework for Claude Code/Cursor/OpenCode/Codex/Gemini; 98K stars, 3.5K stars today; TDD + subagent-driven dev + multi-harness | Open Source | Framework | High | 👀 Tracked | | https://github.com/obra/superpowers |
+| 2026-03-19 | 🆕 langchain-ai/open-swe — Open-source async coding agent (LangGraph + DeepAgents); Slack/Linear/GitHub; isolated cloud sandboxes; multi-model API-direct; 955 stars today | LangChain | Open Source | High | 👀 Tracked | | https://github.com/langchain-ai/open-swe |
+| 2026-03-19 | 🆕 shareAI-lab/learn-claude-code — DIY nano Claude Code harness; 1.4K stars today; developer response to Anthropic C&D | Open Source | Framework | Medium | 👀 Tracked | | https://github.com/shareAI-lab/learn-claude-code |
+| 2026-03-19 | 🆕 jarrodwatts/claude-hud — Claude Code plugin: context/tool/agent status display; 1.8K stars today | Open Source | Framework | Low | 👀 Tracked | | https://github.com/jarrodwatts/claude-hud |
+| 2026-03-19 | 🆕 OpenAI Frontier Business Context — connector-based semantic layer; open standards; targets data warehouses/CRM/ticketing; FDE-bespoke for launch customers; no public API yet | OpenAI | Platform Launch | High | 👀 Tracked | | https://openai.com/business/frontier/ |
 
 ## Academic Papers
 
