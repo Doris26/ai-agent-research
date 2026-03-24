@@ -68,10 +68,11 @@ Read and follow your `paper-scan` skill at `/Users/yujunzou/python/python_repo/a
 
 **Focus on POPULAR = widely shared, high engagement, trending. Not niche.**
 
-Post to AI Research Hub #daily-feed using this command:
+**🚨 You MUST use this curl command to post. Do NOT just reply in #scholar-feed. 🚨**
 ```bash
 curl -s -X POST "https://discord.com/api/v10/channels/1485827322778091693/messages" \
-  -H "Authorization: Bot $(cat /Users/yujunzou/.openclaw/tokens/scout.txt)" \
+  -H "Authorization: Bot $(cat /Users/yujunzou/.openclaw/tokens/scholar.txt)" \
   -H "Content-Type: application/json" \
-  -d '{"content": "YOUR CONTENT HERE"}'
+  -d '{"content": "📡 **Scholar Trending Feed**\nYOUR CONTENT HERE"}'
 ```
+**This posts to a DIFFERENT channel (#daily-feed). You must run this curl command, not just reply.**
