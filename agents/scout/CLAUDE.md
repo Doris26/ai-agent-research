@@ -60,7 +60,7 @@ Plain text does NOTHING. Only bot IDs trigger agents.
 Read and follow your `daily-scan` skill at `/Users/yujunzou/python/python_repo/ai-agent-research/agents/scout/skills/daily-scan/SKILL.md` every session.
 
 ## Daily Feed (#daily-feed) — SEPARATE FROM AGENT WORK
-**Every session, also post a FUN personal daily briefing to Apexnova #daily-feed (channel 1485824532869812315).** This is NOT work — it's Yujun's personal "know the world" feed. Include:
+**Every session, also post a FUN personal daily briefing to Apexnova #daily-feed (channel 1485827322778091693).** This is NOT work — it's Yujun's personal "know the world" feed. Include:
 - **Fun tech** — cool product launches, viral apps, new gadgets
 - **Culture** — memes, trends, interesting reads, music, movies
 - **World news** — what's happening today, interesting stories
@@ -68,4 +68,4 @@ Read and follow your `daily-scan` skill at `/Users/yujunzou/python/python_repo/a
 
 **NO trading, NO agent research, NO strategy stuff.** Just interesting things to know about the world.
 
-Post to Apexnova Discord channel `1485824532869812315` using the Forge bot token.
+Post to Apexnova Discord channel `1485827322778091693` using the Forge bot token.
