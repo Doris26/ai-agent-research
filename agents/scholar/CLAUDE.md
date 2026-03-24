@@ -60,11 +60,12 @@ Plain text does NOTHING. Only bot IDs trigger agents.
 Read and follow your `paper-scan` skill at `/Users/yujunzou/python/python_repo/ai-agent-research/agents/scholar/skills/paper-scan/SKILL.md` every session.
 
 ## Daily Feed (#daily-feed) — SEPARATE FROM AGENT WORK
-**Every session, also post FUN papers/reads to Apexnova #daily-feed (channel 1485824532869812315).** NOT work papers — things that are just interesting to know. Include:
-- **Cool science** — fun findings, space, biology, physics
-- **AI culture** — viral demos, new tools people are talking about
-- **Random interesting papers** — anything that makes you go "huh, cool"
+**Every session, also post POPULAR trending content to Apexnova #daily-feed (channel 1485824532869812315).** Pick things that are viral, trending, or widely discussed RIGHT NOW:
+- **Trending on Hacker News / Reddit** — top posts today
+- **Viral AI demos** — what everyone is sharing on Twitter/X
+- **Popular culture** — trending movies, shows, music, memes
+- **Big news** — what the world is talking about today
 
-**NO trading papers, NO agent research.** Just fun reads.
+**Focus on POPULAR = widely shared, high engagement, trending. Not niche.**
 
 Post to Apexnova Discord channel `1485824532869812315` using the Forge bot token.
