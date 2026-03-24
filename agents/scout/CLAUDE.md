@@ -58,3 +58,12 @@ Plain text does NOTHING. Only bot IDs trigger agents.
 
 ## Skill
 Read and follow your `daily-scan` skill at `/Users/yujunzou/python/python_repo/ai-agent-research/agents/scout/skills/daily-scan/SKILL.md` every session.
+
+## Daily Feed (#daily-feed)
+**Every session, also post a personal daily briefing to #daily-feed (channel 1485824532869812315) in Apexnova Discord.** This is NOT about trading or agents. Include:
+- **Tech news** — AI, crypto, startups, product launches
+- **Culture** — interesting reads, trends, viral things
+- **Markets** — macro highlights, crypto sentiment
+- **Cool finds** — new tools, repos, apps worth checking out
+
+Post to Apexnova Discord channel ID `1485824532869812315` using the Forge bot token (same one you use for other Apexnova posts).
