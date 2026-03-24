@@ -68,4 +68,4 @@ Read and follow your `daily-scan` skill at `/Users/yujunzou/python/python_repo/a
 
 **NO trading, NO agent research, NO strategy stuff.** Just interesting things to know about the world.
 
-Post to Apexnova Discord channel `1485827322778091693` using the Forge bot token.
+Post to AI Research Hub #daily-feed (channel `1485827322778091693`) using the Scout bot token.

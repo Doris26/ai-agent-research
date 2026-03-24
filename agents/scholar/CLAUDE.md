@@ -68,4 +68,4 @@ Read and follow your `paper-scan` skill at `/Users/yujunzou/python/python_repo/a
 
 **Focus on POPULAR = widely shared, high engagement, trending. Not niche.**
 
-Post to Apexnova Discord channel `1485827322778091693` using the Forge bot token.
+Post to AI Research Hub #daily-feed (channel `1485827322778091693`) using the Scout bot token.
