@@ -1,5 +1,50 @@
 # Research Ledger
 
+## 2026-03-23 — Daily Scan
+
+### Cloud Provider Updates
+| Provider | Update | GCP Equivalent? | Gap? |
+|----------|--------|-----------------|------|
+| AWS | Bedrock AgentCore WebRTC — real-time bidirectional audio/video streaming for voice agents | No equivalent yet | GCP STILL BEHIND on real-time voice agent infra |
+| AWS | Bedrock AgentCore Slack integration — agents accessible directly in Slack | No native equivalent | Minor gap |
+| AWS | NVIDIA Nemotron 3 Super on Bedrock + Nova Forge SDK | N/A | AWS model breadth expanding |
+| Azure | Microsoft Agent Framework public preview — build/observe/govern multi-agent systems | ADK | Comparable |
+| Azure | Foundry multi-agent workflows — structured stateful workflow layer | Agent Engine | Comparable |
+| GCP | No new major announcements found March 23 | — | GCP quiet this week |
+
+### Major Product Launches (March 23)
+- **[Dapr Agents v1.0 GA](https://techrseries.com/hrtechnology/confirm-launches-ai-agents-platform-for-performance-management-at-transform-2026/)** — CNCF-backed, production-grade durable workflows for enterprise agents. Huge for cloud-native stacks.
+- **[1Password Unified Access Platform](https://betakit.com/1password-launches-new-platform-to-rein-in-companies-ai-agents/)** — secure credential management for AI agents; orgs can deploy agents without surrendering auth control
+- **[Qualys Agent Val](https://www.stocktitan.net/news/QLYS/qualys-debuts-industry-s-first-ai-agent-for-safe-exploit-validation-2s0jernyohzl.html)** — first AI agent for safe exploit validation + autonomous remediation
+- **[Alibaba Accio Work](https://letsdatascience.com/news/alibaba-launches-accio-work-enterprise-agents-41532389)** — plug-and-play enterprise agent teams, no code required
+- **[Anthropic Claude Computer Use](https://siliconangle.com/2026/03/23/anthropics-claude-gets-computer-use-capabilities-preview/)** — Claude can now click, scroll, navigate web/apps. Research preview for Pro/Max. Second desktop agent after Azure Copilot Cowork.
+- **[Claude Code Channels](https://venturebeat.com/orchestration/anthropic-just-shipped-an-openclaw-killer-called-claude-code-channels)** — hook Claude Code to Discord/Telegram for mobile access. Described as "OpenClaw killer"
+- **[OpenAI Agents SDK v0.13.0](https://github.com/openai/openai-agents-python/releases)** — released today; gpt-realtime-1.5 voice agent support, 100+ LLM providers, guardrails + handoffs improvements
+- **[LangChain Open-SWE](https://aitoolly.com/ai-news/article/2026-03-21-langchain-ai-launches-open-swe-a-new-open-source-asynchronous-coding-agent-for-software-engineering)** — open-source async software engineering coding agent
+- **[NVIDIA Agent Toolkit + OpenShell](https://nvidianews.nvidia.com/news/ai-agents)** — open-source runtime with policy-based security guardrails for enterprise agent deployment
+- **Product Hunt Orbit Awards** — first-ever PH awards for AI workflow automation tools
+
+### Open Source (NEW)
+- **obra/superpowers** — +37,809 stars this month. Agent skill framework going mainstream.
+- **gstack** (Garry Tan, YC) — 23,057 stars in first 7 days. Opinionated agent config stack.
+- **LangChain Open-SWE** — async coding agent, open source
+
+### Security (CRITICAL)
+- **[OpenClaw prompt injection + data exfiltration](https://thehackernews.com/2026/03/openclaw-ai-agent-flaws-could-enable.html)** — confirmed vulnerabilities; China restricting OpenClaw on government systems
+- **ClawWorm** — self-propagating attack targeting LLM agent ecosystems via OpenClaw. 40,000+ active instances at risk.
+
+### Updated GCP Gap Scorecard (March 23)
+| Gap | Status |
+|-----|--------|
+| No native MCP support | STILL OPEN |
+| No desktop agent | NARROWED — Claude Computer Use adds 2nd competitor (Azure was first) |
+| No real-time voice agent | STILL OPEN — AWS now has WebRTC voice agents too |
+| Tool governance maturity | NARROWING |
+| No agent marketplace | STILL OPEN |
+| No AI SRE agent | STILL OPEN |
+
+---
+
 ## 2026-03-19 — Daily Scan
 
 ### Cloud Provider Updates
