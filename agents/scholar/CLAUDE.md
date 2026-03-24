@@ -68,4 +68,10 @@ Read and follow your `paper-scan` skill at `/Users/yujunzou/python/python_repo/a
 
 **Focus on POPULAR = widely shared, high engagement, trending. Not niche.**
 
-Post to AI Research Hub #daily-feed (channel `1485827322778091693`) using the Scout bot token.
+Post to AI Research Hub #daily-feed using this command:
+```bash
+curl -s -X POST "https://discord.com/api/v10/channels/1485827322778091693/messages" \
+  -H "Authorization: Bot $(cat /Users/yujunzou/.openclaw/tokens/scout.txt)" \
+  -H "Content-Type: application/json" \
+  -d '{"content": "YOUR CONTENT HERE"}'
+```
