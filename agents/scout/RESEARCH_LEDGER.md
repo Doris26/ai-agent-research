@@ -1,5 +1,58 @@
 # Research Ledger
 
+## 2026-03-25 — Daily Scan
+
+### Cloud Provider Updates
+| Provider | Update | GCP Equivalent? | Gap? |
+|----------|--------|-----------------|------|
+| AWS | Bedrock AgentCore stateful MCP GA (March 10) — elicitation, sampling, progress notifications, isolated microVM sessions | No equivalent in Vertex AI Agent Builder | GAP — GCP has MCP server management UI (Preview) but no MCP runtime |
+| AWS | Bedrock AgentCore Quality Evaluations + Policy Controls — governance layer for trusted agent deployment | Limited eval tooling | GAP — AWS governance tooling more mature |
+| Azure | SRE Agent GA (March 10) — 1,300+ agents deployed internally, 35K incidents mitigated, 20K eng-hours saved/month | No equivalent | GAP — GCP has no AI SRE agent product |
+| Azure | Microsoft Agent Framework — unified build/observe/govern multi-agent system | ADK | Comparable |
+| GCP | No new major announcements found March 24-25 — Agent Engine GA, Agent Designer Preview, Cloud API Registry Preview from earlier in month | — | GCP quiet this week |
+
+### Major Product Launches (March 24-25 window)
+- **[Alibaba Wukong](https://www.cnbc.com/2026/03/17/alibaba-wukong-ai-enterprise-tool-restructuring-qwen-exits.html)** — enterprise multi-agent management with Slack/Teams integration. First serious Chinese enterprise agent with Western collaboration integrations.
+- **[Manus Desktop App](https://techcrunch.com/2026/03/05/exclusive-luma-launches-creative-ai-agents-powered-by-its-new-unified-intelligence-models/)** — Meta-backed local desktop agent; operates on files/apps directly. Third desktop agent after Azure Copilot Cowork + Claude Computer Use.
+- **[AgentDiscuss](https://aitoolly.com/ai-news/article/2026-03-17-agentdiscuss-launches-on-product-hunt-a-new-platform-for-ai-agent-collaboration-and-discussion)** — Garry Tan/YC-backed platform for AI agent collaboration/discussion. ProductHunt March 17.
+- **[Siemens Fuse EDA AI Agent](https://news.siemens.com/en-us/siemens-fuse-eda-ai-agent/)** — domain-specific agent for electronic design automation. NVIDIA GTC debut. Vertical agent trend accelerating.
+- **[Picsart AI Agent Marketplace](https://www.marketingprofs.com/opinions/2026/54448/ai-update-march-20-2026-ai-news-and-views-from-the-past-week)** — creator-facing marketplace for specialized visual editing agents.
+- **[BotBoard](https://www.producthunt.com/leaderboard/daily/2026/3/15)** — task management designed for agent-era workflows. ProductHunt ~March 24.
+- **[Google Stitch AI Design Env](https://www.crescendo.ai/news/latest-ai-news-and-updates)** — infinite canvas + design agent that reasons across projects + agent manager for parallel UI prototyping.
+- **[Gartner Guardian Agents Market Guide](https://hackernoon.com/ai-in-2026-whats-trending)** — first Gartner guide for agents-supervising-agents. New governance category now official.
+
+### SDK Updates
+- **OpenAI Agents SDK v0.13.1** (March 25) — SIP protocol in RealtimeRunner, Python 3.14 compat, WebSocket transport (opt-in), default Realtime model = `gpt-realtime-1.5`, `gpt-5.4` for computer use
+- **Anthropic Claude Code** — `--bare` flag for scripted calls, `--channels` permission relay to phone, MCP elicitation hooks, VSCode native MCP server management dialog (`/mcp`)
+
+### Open Source (NEW)
+- **[Understand-Anything](https://topaiproduct.com/2026/03/22/understand-anything-scores-2400-github-stars-by-mapping-codebases-with-five-ai-agents/)** — 2,400 stars March 22. 5-agent codebase intelligence pipeline (scan → analyze → architecture → tour → validate). MIT licensed. Claude Code plugin.
+- **[Hindsight](https://aitoolly.com/ai-news/article/2026-03-15-hindsight-learning-agent-memory-a-new-project-trending-on-github-by-vectorize-io)** (vectorize-io) — learning agent memory project, trending mid-March
+- **[Lightpanda](https://www.shareuhack.com/en/posts/github-trending-weekly-2026-03-18)** — headless browser in Zig for AI agents, CDP-compatible
+- **LangChain Deep Agents** — 9.9k stars in 5 hours on major March update; NVIDIA AI-Q Blueprint partnership
+
+### Framework Status (March 25)
+| Framework | Status | Trend |
+|-----------|--------|-------|
+| LangGraph | Production-mature, enterprise default | Strong |
+| OpenAI Agents SDK | Rapid releases (v0.13.1), 100+ LLMs | Strong |
+| CrewAI | v1.10+ A2A support, fast iteration | Growing |
+| AutoGen | Last release Sept 2025 (v0.7.5) | Declining |
+| Smolagents | Slowed | Flat |
+
+### Updated GCP Gap Scorecard (March 25)
+| Gap | Status |
+|-----|--------|
+| No MCP runtime (only mgmt UI) | OPEN — AWS Bedrock AgentCore stateful MCP GA, GCP Preview only |
+| No desktop agent | OPEN — 3 competitors now (Azure, Claude, Manus) |
+| No real-time voice agent | OPEN |
+| No AI SRE agent | OPEN — Azure SRE Agent GA with hard production metrics |
+| No agent marketplace | OPEN |
+| Tool governance maturity | NARROWING — GCP Cloud API Registry, but AWS Policy GA is more mature |
+| Agent evaluation/quality | OPEN — AWS AgentCore quality evaluations, no GCP equivalent |
+
+---
+
 ## 2026-03-23 — Daily Scan
 
 ### Cloud Provider Updates
