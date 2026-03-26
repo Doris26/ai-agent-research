@@ -1,6 +1,6 @@
 # Multi-Agent AI Patterns — OpenClaw Production Playbook
 
-13 patterns from running autonomous AI agents 24/7 in production. Each pattern is a standalone file in the `patterns/` folder.
+14 patterns from running autonomous AI agents 24/7 in production. Each pattern is a standalone file in the `patterns/` folder.
 
 | # | Pattern | Key Benefit | File |
 |---|---------|-------------|------|
@@ -17,5 +17,6 @@
 | 11 | [USER.md](../patterns/11-user-md-tailoring.md) | Tailored output | `11-user-md-tailoring.md` |
 | 12 | [Staggered Crons](../patterns/12-staggered-crons.md) | Prevents conflicts | `12-staggered-crons.md` |
 | 13 | [Resilience](../patterns/13-resilience.md) | Auto-recovery from failures | `13-resilience.md` |
+| 14 | [Agent Communication](../patterns/14-agent-communication-and-memory.md) | 3 protocols: Discord Bus + ACP Spawn + File-Based | `14-agent-communication-and-memory.md` |
 
 *Built with [OpenClaw](https://openclaw.ai) + [Claude Code](https://claude.ai/claude-code). All patterns validated in production with 8 agents across 2 projects.*

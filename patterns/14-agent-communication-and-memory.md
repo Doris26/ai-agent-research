@@ -1,211 +1,293 @@
-# Pattern 14: How Agents See, Talk, and Remember
+# Pattern 14: Agent Communication — Three Protocols, One System
 
-This pattern explains exactly how information flows in a multi-agent system — what each agent can see, how they communicate, and how memory works.
-
----
-
-## How an Agent "Sees" Things
-
-An agent has 4 sources of information, loaded in this order:
-
-```
-┌─────────────────────────────────────────────────────┐
-│  1. SOUL.md (auto-loaded, every session)            │  WHO am I? What's my mission?
-│  2. MEMORY.md (auto-loaded, every session)          │  What do I know from past sessions?
-│  3. USER.md (auto-loaded, every session)            │  Who is the human I work for?
-│  4. Cron message (injected at session start)        │  What should I do RIGHT NOW?
-├─────────────────────────────────────────────────────┤
-│  Loaded on-demand (agent must actively read):       │
-│  5. Discord messages (API call)                     │  What did other agents post?
-│  6. Daily logs (memory/YYYY-MM-DD.md)               │  What did I do yesterday?
-│  7. Shared files (RESEARCH_LEDGER.md, etc.)         │  Shared facts across agents
-│  8. Web search results                              │  External information
-└─────────────────────────────────────────────────────┘
-```
-
-**Auto-loaded = costs tokens every session.** Keep these files small.
-**On-demand = free until the agent reads them.** Can be large.
+This pattern documents the complete multi-agent communication architecture. Most frameworks support only 1:1 streaming or "transfer to agent." OpenClaw supports three simultaneous communication paths.
 
 ---
 
-## How Agents Talk to Each Other
-
-Agents do NOT share memory. They communicate through **Discord messages** — like coworkers in a Slack channel.
-
-### The Flow
+## The Three Communication Protocols
 
 ```
-Scout's session:
-  1. Reads SOUL.md + MEMORY.md (auto)
-  2. Does web_search for AI products
-  3. Posts findings to #scout-feed via Discord API
+┌─────────────────────────────────────────────────────────────────┐
+│                    OpenClaw Gateway (localhost:18789)            │
+│                    WebSocket + JSON-RPC + Token Auth             │
+│                                                                 │
+│  ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐   │
+│  │  Scout   │   │  Sage    │   │  Forge   │   │ Analyst  │   │
+│  │ (claude) │   │ (claude) │   │ (claude) │   │ (claude) │   │
+│  └────┬─────┘   └────┬─────┘   └────┬─────┘   └────┬─────┘   │
+│       │              │              │              │           │
+│  ─────┴──────────────┴──────────────┴──────────────┴────────── │
+│       │              │              │                          │
+│   Protocol 1     Protocol 2     Protocol 3                    │
+│   Discord Bus    ACP Spawn      File-Based                    │
+│   (visible)      (invisible*)   (async)                       │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Protocol 1: Discord as Agent Bus (Visible, Async)
+
+**How:** Each agent has a dedicated Discord bot. Posts summaries to channels. Other agents read via API.
+
+**When to use:** Status updates, results, proposals, audit trail.
+
+```
+Scout runs (cron 8:00 AM):
+  1. web_search for AI products
+  2. Posts findings to #scout-feed via Discord API
+  3. Session ends
+
+        ↓ (90 min gap — no tokens burned)
+
+Analyst runs (cron 9:30 AM):
+  1. Reads #scout-feed via Discord API (FREE — 0 tokens)
+  2. Reads #scholar-feed via Discord API (FREE — 0 tokens)
+  3. Synthesizes → posts briefing to #daily-briefing
   4. Session ends
-
-        ↓ (30 min gap)
-
-Analyst's session:
-  1. Reads SOUL.md + MEMORY.md (auto)
-  2. Reads #scout-feed via Discord API (last 20 msgs)
-  3. Reads #scholar-feed via Discord API (last 20 msgs)
-  4. Synthesizes → posts briefing to #daily-briefing
-  5. Session ends
 ```
 
-### How an Agent Reads Discord
+**Cost:** Reading Discord = 0 tokens (HTTP call). Only synthesis costs tokens.
+
+**Triggering other agents:** `@mention` wakes them up.
+```
+Sage posts: "@Forge backtest S50 ADX+OBV strategy"
+  → OpenClaw sees @mention → creates new Forge session
+  → Forge reads channel for context → does the work
+```
+
+**Config required for bot-to-bot @mentions:**
+```json
+{
+  "allowBots": "mentions",
+  "tools": { "profile": "full" }
+}
+```
+
+### Token Savings vs Direct Piping
+
+| Approach | Tokens/cycle | Monthly (3 agents) |
+|----------|-------------|-------------------|
+| Piped (full context) | ~500K | $90-240 |
+| Discord summaries | ~150K | $20-30 |
+| **Savings** | **70%** | **75-90%** |
+
+---
+
+## Protocol 2: ACP Spawn (Invisible, Synchronous)
+
+**How:** Agent A spawns Agent B as a sub-session via `sessions_spawn`. B runs, returns result to A.
+
+**When to use:** Agent needs another agent's output to continue its own work.
 
 ```python
-import urllib.request, json
-
-# This is a FREE Discord API call — no Claude tokens used
-req = urllib.request.Request(
-    "https://discord.com/api/v10/channels/CHANNEL_ID/messages?limit=20",
-    headers={"Authorization": "Bot BOT_TOKEN"}
-)
-messages = json.loads(urllib.request.urlopen(req).read())
-
-# Agent now sees last 20 messages from that channel
-for m in messages:
-    print(f"{m['author']['username']}: {m['content']}")
+# Inside Sage's session:
+sessions_spawn({
+    task: "Backtest RSI strategy on BTC, 1Y window, report Calmar",
+    agentId: "forge",
+    thread: false,    # invisible — no Discord output
+    mode: "run"       # oneshot — run and return
+})
+# Sage blocks, waits for Forge result, then continues
 ```
 
-**Key:** Reading Discord costs 0 Claude tokens. It's a simple HTTP call. The agent only pays tokens when it processes the messages with Claude.
+### Visible vs Invisible ACP
 
-### How an Agent Posts to Discord
+| Config | Discord Visible? | Use Case |
+|--------|-----------------|----------|
+| `thread: true` | Yes — creates Discord thread | Debug, human monitoring |
+| `thread: false` | No — runs silently | Speed, batch processing |
 
-```python
-# Agent posts via Discord API — also free, no Claude tokens
-curl -X POST "https://discord.com/api/v10/channels/CHANNEL_ID/messages" \
-  -H "Authorization: Bot BOT_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"content": "🔍 Found: CrewAI v0.80 released with memory support"}'
-```
-
-Or OpenClaw handles delivery automatically via `--to "channel:ID"` in the cron config.
-
-### How @mentions Work (Trigger vs Read)
-
-Two different things:
-- **@mention = TRIGGER** — wakes up the agent, creates a new session
-- **API read = CONTEXT** — agent reads recent messages to understand what happened
+### ACP Session Lifecycle
 
 ```
-Forge @mentions Sage: "@Sage evaluate results"
-  → OpenClaw creates new Sage session (TRIGGER)
-  → Sage reads Discord API — last 20 messages (CONTEXT)
-  → Sage sees Forge's results, proposals, everything
-  → Sage does the work
+1. Parent calls sessions_spawn({agentId, task, thread})
+2. Gateway creates session: agent:forge:acp:uuid
+3. If thread=true: creates Discord thread, posts intro
+4. Child agent runs with full tool access
+5. Child completes → result returned to parent
+6. If thread=true: posts farewell, thread goes read-only
 ```
 
-**When to @mention:** Only when you need another agent to ACT. Not for status posts.
-- `@Forge backtest this` → Forge wakes up, reads channel, backtests
-- `@Sage evaluate and continue` → Sage wakes up, reads results, continues
+### Spawn Depth Limit
 
-**When NOT to @mention:** Status posts, proposals, results — just post them. Everyone can read the channel via API anytime.
+```
+Sage (depth 0)
+  → spawns Forge (depth 1)
+    → Forge spawns sub-agent (depth 2)
+      → ... up to maxSpawnDepth: 5
+```
 
-**Config required:** Set `allowBots: "mentions"` in Discord config so bot-to-bot @mentions work. Set `tools.profile: "full"` so agents have tools in @mention sessions.
+Prevents infinite recursion. Configurable per agent.
+
+### ACP vs Discord Bus — When to Use Which
+
+| | Discord Bus | ACP Spawn |
+|--|------------|-----------|
+| **Visibility** | Everyone sees it | Silent (unless thread: true) |
+| **Timing** | Async (minutes/hours gap) | Sync (parent waits) |
+| **Cost** | Cheap (summaries only) | Full context (more tokens) |
+| **Audit trail** | Yes (Discord history) | Only if threaded |
+| **Use case** | Status, results, proposals | "I need X computed now" |
 
 ---
 
-## How an Agent Sees Its Own Markdowns
+## Protocol 3: File-Based (Async, Persistent)
 
-### Auto-loaded Every Session (OpenClaw injects these)
+**How:** Agent A writes to shared files. Agent B reads them in its next session.
 
-| File | What Agent Sees | Token Cost |
-|------|----------------|------------|
-| **SOUL.md** | Its identity, mission, rules, output format | Every session |
-| **MEMORY.md** | Curated knowledge from all past sessions | Every session |
-| **USER.md** | Who Yujun is, how to tailor output | Every session |
-| **AGENTS.md** | Available skills and tools | Every session |
-| **CLAUDE.md** | Project rules and constraints | Every session |
+**When to use:** Long-term knowledge transfer, structured data, shared state.
 
-> **These files are loaded automatically.** The agent doesn't need to read them — OpenClaw injects them into the session context. That's why keeping them small saves tokens.
+```
+Forge finishes backtest:
+  1. Updates GOLDEN_SHEET.md with results
+  2. Updates its own MEMORY.md
+  3. Commits to git
 
-### Read On-Demand (agent uses Read tool)
+        ↓ (next session, hours later)
 
-| File | When Agent Reads It | Token Cost |
-|------|-------------------|------------|
-| `memory/YYYY-MM-DD.md` | When it needs yesterday's raw notes | Only when read |
-| `RESEARCH_LEDGER.md` | When checking shared facts | Only when read |
-| `PATTERNS.md` | When proposing new strategies | Only when read |
-| `RESEARCH.md` | When checking research log | Only when read |
-| Other agent's files | **NEVER** — communicate via Discord | N/A |
+Sage wakes up:
+  1. MEMORY.md auto-loaded (sees strategy status)
+  2. Reads GOLDEN_SHEET.md (shared across all agents)
+  3. Knows which strategies passed/failed without Discord
+```
+
+### What's Shared vs Private
+
+| File | Shared? | Who Writes | Who Reads |
+|------|---------|-----------|----------|
+| `SOUL.md` | Private | Human only | Own agent |
+| `MEMORY.md` | Private | Own agent | Own agent |
+| `memory/YYYY-MM-DD.md` | Private | Own agent | Own agent |
+| `GOLDEN_SHEET.md` | Shared | Any agent | All agents |
+| `RESEARCH_LEDGER.md` | Shared | Any agent | All agents |
+| Discord channels | Shared | Posting agent | Any agent (API read) |
 
 ---
 
-## How Memory Management Works
-
-### The Two-Tier System
+## How All Three Work Together (Real Example)
 
 ```
-Session runs:
-  ├── Agent does work (search, analyze, etc.)
-  ├── Writes EVERYTHING to memory/2026-03-15.md (daily log)
-  │     "Searched ProductHunt, found 5 products, 2 relevant..."
-  │     "CrewAI v0.80 has memory support, pricing unchanged..."
-  │     "Raw search results: [full text]"
-  │
-  ├── Promotes KEY FACTS to MEMORY.md (1-2 lines)
-  │     "CrewAI v0.80: memory support added. Relevant to Vertex AI."
-  │
-  └── Commits both to git
+[8:00 AM] Scout cron fires (Protocol 3: reads SOUL.md, MEMORY.md)
+  → web_search for AI products
+  → Posts to #scout-feed (Protocol 1: Discord)
+  → Updates RESEARCH_LEDGER.md (Protocol 3: File)
 
-Next session:
-  ├── MEMORY.md auto-loaded (small, curated — 5 tokens)
-  ├── memory/2026-03-15.md NOT loaded (saves tokens)
-  └── If agent needs yesterday's details → reads daily log on-demand
+[8:30 AM] Scholar cron fires
+  → Searches arxiv
+  → Posts to #scholar-feed (Protocol 1)
+  → Updates RESEARCH_LEDGER.md (Protocol 3)
+
+[9:30 AM] Analyst cron fires
+  → Reads #scout-feed + #scholar-feed (Protocol 1: free API call)
+  → Reads RESEARCH_LEDGER.md (Protocol 3)
+  → If needs deeper analysis: sessions_spawn(scholar, "dig into paper X") (Protocol 2: ACP)
+  → Posts daily briefing to #daily-briefing (Protocol 1)
 ```
-
-### What Goes Where
-
-| Info Type | Where | Example |
-|-----------|-------|---------|
-| Raw findings | `memory/YYYY-MM-DD.md` | "Searched arxiv, found 12 papers, 3 relevant..." |
-| Key facts | `MEMORY.md` | "Best strategy: Calmar 3.05 (Round 6)" |
-| Validated patterns | `PATTERNS.md` | "SMA strategies cap at Calmar ~3.0 in bear markets" |
-| Shared facts | `RESEARCH_LEDGER.md` | Table row: date, product, source, status |
-| Strategy results | `MEMORY.md` | "Round 8: ADX/DI, Calmar 1.21, REJECTED" |
-
-### What Each Agent Can See of Other Agents
-
-| | Scout's files | Scholar's files | Analyst's files | Shared files |
-|--|--------------|----------------|----------------|-------------|
-| **Scout** | ✅ All own files | ❌ Cannot see | ❌ Cannot see | ✅ RESEARCH_LEDGER.md |
-| **Scholar** | ❌ Cannot see | ✅ All own files | ❌ Cannot see | ✅ RESEARCH_LEDGER.md |
-| **Analyst** | ❌ Cannot see | ❌ Cannot see | ✅ All own files | ✅ RESEARCH_LEDGER.md |
-
-**Agents share information via:**
-1. **Discord posts** — summaries with links (cheap, auditable)
-2. **RESEARCH_LEDGER.md** — shared fact table (structured, no reasoning leaked)
-3. **@mentions** — targeted questions (Analyst asks Scout to dig deeper)
-
-**Agents do NOT share:**
-- MEMORY.md (private, contains internal reasoning)
-- Daily logs (private, contains raw messy notes)
-- SOUL.md (protected, only human changes)
 
 ---
 
-## Summary: The Information Architecture
+## Why Three Protocols Instead of One?
+
+| Need | Best Protocol | Why |
+|------|--------------|-----|
+| "Post results for everyone" | Discord Bus | Visible, auditable, cheap |
+| "I need this computed now" | ACP Spawn | Synchronous, returns result |
+| "Remember this for next time" | File-Based | Persistent across sessions |
+| "Wake up Agent B" | Discord @mention | Triggers new session |
+| "Share structured data" | File (LEDGER.md) | All agents read it |
+
+Using only one protocol creates bottlenecks:
+- **Only Discord:** Can't do synchronous sub-tasks
+- **Only ACP:** Expensive (full context piping), no audit trail
+- **Only Files:** No real-time communication, no triggering
+
+The combination gives you **async + sync + persistent** coverage with minimal token waste.
+
+---
+
+## Configuration Reference
+
+### Discord Account (per agent)
+```json
+{
+  "token": "BOT_TOKEN",
+  "groupPolicy": "open",
+  "streaming": "off",
+  "guilds": { "GUILD_ID": {} }
+}
+```
+
+### ACP Config
+```json
+{
+  "acp": {
+    "enabled": true,
+    "dispatch": { "enabled": true },
+    "backend": "acpx",
+    "defaultAgent": "claude",
+    "allowedAgents": ["claude", "claude-code", "codex", "gemini"]
+  }
+}
+```
+
+### Thread Binding (for visible ACP)
+```json
+{
+  "channels": {
+    "discord": {
+      "threadBindings": {
+        "enabled": true,
+        "spawnSubagentSessions": true,
+        "spawnAcpSessions": true
+      }
+    }
+  }
+}
+```
+
+### Cron Job (triggers Protocol 1 or 3)
+```json
+{
+  "agentId": "scout",
+  "schedule": { "kind": "cron", "expr": "0 8 * * *" },
+  "sessionTarget": "isolated",
+  "delivery": {
+    "mode": "announce",
+    "to": "channel:DISCORD_CHANNEL_ID"
+  }
+}
+```
+
+---
+
+## Summary Diagram
 
 ```
-┌──────────────────────────────────────────────┐
-│              Human (Yujun)                    │
-│  Can read everything. Can change SOUL.md.     │
-│  Reviews RESEARCH_LEDGER.md weekly.           │
-├──────────────────────────────────────────────┤
-│           RESEARCH_LEDGER.md                  │
-│  Shared fact table. All agents read/write.    │
-├──────────────────────────────────────────────┤
-│         Discord Channels                      │
-│  #scout-feed ← Scout posts                   │
-│  #scholar-feed ← Scholar posts                │
-│  #daily-briefing ← Analyst posts              │
-│  Agents read each other's channels (free)     │
-├──────┬───────────┬───────────┬───────────────┤
-│Scout │  Scholar  │  Analyst  │    (private)   │
-│SOUL  │  SOUL     │  SOUL     │  auto-loaded   │
-│MEMORY│  MEMORY   │  MEMORY   │  auto-loaded   │
-│daily/│  daily/   │  daily/   │  on-demand     │
-│PATTERN│ PATTERN  │  PATTERN  │  on-demand     │
-└──────┴───────────┴───────────┴───────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                     Human (Yujun)                           │
+│   Reads Discord, reviews GOLDEN_SHEET, changes SOUL.md     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Protocol 1: Discord Bus          Protocol 2: ACP Spawn    │
+│  ┌──────────────────────┐        ┌───────────────────┐    │
+│  │ #scout-feed    ← Scout│        │ Sage ──spawn──→   │    │
+│  │ #scholar-feed  ← Scholar      │    Forge (silent) │    │
+│  │ #daily-briefing← Analyst      │    ↓ result back  │    │
+│  │ #yujun-team    ← Sage/Forge│  │ Sage continues    │    │
+│  │                        │      └───────────────────┘    │
+│  │ Agents read each other │                               │
+│  │ via API (0 tokens)     │      Protocol 3: Files        │
+│  │                        │      ┌───────────────────┐    │
+│  │ @mention = trigger     │      │ GOLDEN_SHEET.md   │    │
+│  │ new agent session      │      │ RESEARCH_LEDGER.md│    │
+│  └──────────────────────┘        │ MEMORY.md (private)│   │
+│                                   │ memory/daily.md   │    │
+│                                   └───────────────────┘    │
+├─────────────────────────────────────────────────────────────┤
+│  Scout    Scholar    Sage    Forge    Analyst               │
+│  (own     (own       (own    (own     (own                  │
+│   SOUL,    SOUL,      SOUL,   SOUL,    SOUL,               │
+│   MEMORY)  MEMORY)    MEMORY) MEMORY)  MEMORY)             │
+└─────────────────────────────────────────────────────────────┘
 ```

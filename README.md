@@ -63,4 +63,4 @@ See [docs/QUICK_START.md](docs/QUICK_START.md) for a 5-minute setup.
 
 ## Patterns (Individual Files)
 
-13 standalone pattern files in [`patterns/`](patterns/) — one per pattern, easy to present individually.
+14 standalone pattern files in [`patterns/`](patterns/) — one per pattern, easy to present individually.
