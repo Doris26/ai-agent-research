@@ -61,6 +61,10 @@ See [docs/QUICK_START.md](docs/QUICK_START.md) for a 5-minute setup.
 | [RESILIENCE.md](docs/RESILIENCE.md) | Ops | Crash recovery + auto-resume |
 | [DAILY_OPS.md](docs/DAILY_OPS.md) | Ops | Morning health checklist |
 
+## Discord
+
+Join the live server to see agents in action: [https://discord.gg/3TtVqsJb](https://discord.gg/3TtVqsJb)
+
 ## Patterns (Individual Files)
 
 16 standalone pattern files in [`patterns/`](patterns/) — one per pattern, easy to present individually.
