@@ -1,5 +1,50 @@
 # Research Ledger
 
+## 2026-03-28 — Daily Scan
+
+### Cloud Provider Updates
+| Provider | Update | GCP Equivalent? | Gap? |
+|----------|--------|-----------------|------|
+| AWS | Bedrock AgentCore Managed Session Storage (Preview) — agent filesystem persists across stop/resume cycles; same session ID mounts same storage in new microVM | No equivalent — Agent Engine Sessions GA but no persistent FS mounts | NEW GAP — critical for long-running production agents |
+| AWS | Bedrock AgentCore AG-UI Protocol support — standardizes agent-to-UI real-time communication; completes MCP+A2A+AG-UI triad | None | NEW GAP — GCP Cloud API Registry covers MCP only; no A2A or AG-UI runtime |
+| AWS | Bedrock AgentCore Stateful MCP confirmed GA — elicitation/sampling/progress notifications in production | Cloud API Registry Preview only | EXISTING GAP persists |
+| AWS | Bedrock AgentCore Policy + Quality Evaluations GA — Cedar-based policy, 13-dim evaluation, CloudWatch dashboard | Tool Governance Preview | EXISTING GAP — AWS is GA, GCP still Preview |
+| Azure | SRE Agent GA — 1,300+ agents, 35K incidents mitigated, 20K eng-hours/month | None | EXISTING GAP — GCP has no AI SRE agent |
+| Azure | Foundry Agent Service Computer Use (Preview) — full desktop UI control in managed agent service | None | EXISTING GAP — GCP missing managed computer-use |
+| Azure | Microsoft Agent Framework RC1 — AutoGen+Semantic Kernel unified, GA targeting end of Q1 2026 | ADK | Comparable, but .NET support is Azure advantage |
+| GCP | Vertex AI Agent Designer (Preview) + Cloud API Registry (Preview) — low-code visual agent builder + MCP governance | Native | GCP STRENGTH: visual designer; NARROWING on MCP |
+| GCP | Gemini 3.1 Pro in Model Garden (Preview) — 77.1% ARC-AGI-2, 1M context | Native | GCP STRENGTH: best reasoning benchmark |
+| GCP | Agent Engine Code Execution GA | Native | GCP STRENGTH |
+
+### Major Product Launches
+- **[Claude Computer Use + Cowork GA](https://www.cnbc.com/2026/03/24/anthropic-claude-ai-agent-use-computer-finish-tasks.html)** — Claude can open apps, navigate browsers, fill spreadsheets from phone dispatch; prioritizes connectors then falls back to keyboard/mouse. Pro/Max. Third desktop agent (after Azure, Manus).
+- **[Claude Code Channels](https://venturebeat.com/orchestration/anthropic-just-shipped-an-openclaw-killer-called-claude-code-channels)** — MCP-based two-way bridge to Slack/WhatsApp/Telegram; community-extensible. MCP crossed 97M installs.
+- **[Anthropic Mythos leak](https://fortune.com/2026/03/26/anthropic-says-testing-mythos-powerful-new-ai-model-after-data-leak-reveals-its-existence-step-change-in-capabilities/)** — "step change" frontier model in testing; stronger than Claude 4. Signals upcoming frontier model escalation.
+- **[MuleRun](https://www.producthunt.com/leaderboard/monthly/2026/3)** (ProductHunt March) — self-evolving personal AI that learns work habits, runs 24/7 on cloud VM, improves without coding.
+- **[Tobira.ai](https://www.producthunt.com/leaderboard/monthly/2026/3)** (ProductHunt March) — agent-to-agent business discovery and negotiation network; agents find and negotiate opportunities on behalf of users.
+- **[Naoma AI Demo Agent](https://www.producthunt.com/leaderboard/monthly/2026/3)** (ProductHunt March) — personalized in-browser video demos for B2B SaaS with prospect qualification.
+- **[Anything API](https://www.producthunt.com/leaderboard/monthly/2026/3)** (ProductHunt March) — browser agent platform combining deterministic scripts + AI reasoning on managed infra.
+
+### SDK Updates
+- **OpenAI Agents SDK v0.13.2** (March 26) — SIP + WebSocket transport for Realtime, `responses_websocket_session()`, tool search namespaces, `gpt-5.4` for computer use. Python 3.9 dropped.
+- **LangChain Deep Agents** — NVIDIA AI-Q Blueprint partnership; 9.9K stars in 5h; LangChain crossed 100K total stars. Enterprise research system on LangGraph + NVIDIA parallel/speculative execution.
+
+### Open Source
+- **Hindsight (vectorize-io)** — LangGraph integration blog (Tools/Nodes/BaseStore patterns); 91.4% LongMemEval; belief evolution + TEMPR retrieval still unique vs any cloud memory offering.
+
+### Key Gaps Summary (March 28)
+| Gap | Priority |
+|-----|----------|
+| No persistent agent filesystem (AWS Managed Session Storage) | HIGH — production enterprise requirement |
+| No AG-UI protocol support | HIGH — AWS completing protocol triad |
+| No A2A runtime | HIGH |
+| No desktop agent | HIGH — 3 competitors confirmed |
+| No AI SRE agent | HIGH — Azure has hard ROI metrics |
+| No real-time voice agent | MEDIUM |
+| Agent evaluation maturity | MEDIUM — AWS 13-dim GA |
+
+---
+
 ## 2026-03-25 — Daily Scan
 
 ### Cloud Provider Updates
