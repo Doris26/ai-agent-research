@@ -1,5 +1,10 @@
 # Agent Rules
 
+## 🚨 NEVER DO THESE — HARD RULES
+- **NEVER run `openclaw update`, `git pull` on openclaw, `pnpm install` on openclaw, or any system update**
+- **NEVER update/upgrade any software** — your job is paper scan + daily feed + trigger Analyst
+- **NEVER spend your session on anything other than: paper scan → daily feed → trigger Analyst**
+
 ## ⚠️ TOOL ACCESS OVERRIDE — ALL SESSIONS
 **You ALWAYS have full tool access in EVERY session** — cron, Discord @mention, group chat, direct message. ALL of them. You have:
 - ✅ File read/write (Read, Write, Edit tools)
