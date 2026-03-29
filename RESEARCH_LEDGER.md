@@ -363,3 +363,18 @@
 | 2026-03-25 | LangSmith Insights Agent — AI-powered trace analysis, auto-detects usage patterns and failure modes | LangChain | Platform Update | High | 🆕 New | Analyst Session 8 research | https://blog.langchain.com/january-2026-langchain-newsletter/ |
 | 2026-03-25 | Virtue AI ForgingGround — continuous stress testing product for enterprise AI agents | Virtue AI | Product Launch | High | 🆕 New | Analyst Session 8 research | https://www.helpnetsecurity.com/2026/03/18/virtue-ai-agent-forgingground/ |
 | 2026-03-25 | Salesforce Agentforce 360 Spring '26 GA — Agentforce Voice, Agent Script, Agentforce Builder, Intelligent Context | Salesforce | Platform Update | Medium | 🆕 New | Analyst Session 8 research | https://ascendix.com/blog/salesforce-notes-spring-26-release/ |
+| 2026-03-29 | Claude Code Channels — MCP as two-way bridge; `--channels` flag enables Discord/Telegram polling. VentureBeat: "OpenClaw killer" | Anthropic | Platform Update | High | 🆕 New | | — |
+| 2026-03-29 | WebMCP in Chrome 146 Canary — browser-native MCP; billions of web pages become MCP tools | Google / W3C | Platform Update | High | 🆕 New | | — |
+| 2026-03-29 | Google Gemini 3 Deep Think — live in Gemini app for Ultra subscribers, early API access open | Google | Product Launch | High | 🆕 New | | — |
+| 2026-03-29 | Google AP2 (Agent Payments Protocol) — interoperates with Mastercard Verifiable Intent (Google + IBM + Fiserv partners) | Google / Mastercard | Standard | High | 🆕 New | | — |
+| 2026-03-29 | Mastercard Verifiable Intent — open-sourced agent payment authorization framework | Mastercard / Google | Open Source | High | 🆕 New | | — |
+| 2026-03-29 | NVIDIA Open Agent Development Platform — announced GTC March 23-24 | NVIDIA | Platform Launch | High | 🆕 New | | — |
+| 2026-03-29 | Anthropic Cowork — Claude Desktop agent for local files, no coding needed | Anthropic | Product Launch | Medium | 🆕 New | | — |
+| 2026-03-29 | Manus Desktop — Meta-backed Manus agent runs locally, accesses files + apps | Manus / Meta | Product Launch | Medium | 🆕 New | | — |
+| 2026-03-29 | Walmart x ChatGPT — in-chat shopping with account linking + payments, web live | OpenAI / Walmart | Product Launch | High | 🆕 New | | — |
+| 2026-03-29 | OpenAI Codex Security — 10,561 high-severity issues found across 1.2M scanned commits; enterprise security agent | OpenAI | Product Launch | High | 🆕 New | | — |
+| 2026-03-29 | Rox AI — $1.2B funding (General Catalyst); agentic enterprise platform | Rox AI | Funding | Medium | 🆕 New | | — |
+| 2026-03-29 | Oasis Security — $120M Series B; non-human identity + agentic access governance | Oasis Security | Funding | High | 🆕 New | Validates SPIFFE identity insight posted 2026-03-25 | — |
+| 2026-03-29 | TestSprite 2.1 — agentic testing tool (plans, writes, runs, debugs tests autonomously); PH top | TestSprite | Product Launch | Medium | 🆕 New | | — |
+| 2026-03-29 | OpenViking (ByteDance) — agent context database, GitHub trending | ByteDance | Open Source | Medium | 🆕 New | | — |
+| 2026-03-29 | Lightpanda — headless browser in Zig, built for AI agents | OSS | Open Source | Medium | 🆕 New | | — |
