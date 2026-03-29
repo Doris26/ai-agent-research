@@ -67,4 +67,4 @@ Join the live server to see agents in action: [https://discord.gg/3TtVqsJb](http
 
 ## Patterns (Individual Files)
 
-16 standalone pattern files in [`patterns/`](patterns/) — one per pattern, easy to present individually.
+17 standalone pattern files in [`patterns/`](patterns/) — one per pattern, easy to present individually.

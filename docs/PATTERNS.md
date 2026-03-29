@@ -1,6 +1,6 @@
 # Multi-Agent AI Patterns — OpenClaw Production Playbook
 
-16 patterns from running autonomous AI agents 24/7 in production. Each pattern is a standalone file in the `patterns/` folder.
+17 patterns from running autonomous AI agents 24/7 in production. Each pattern is a standalone file in the `patterns/` folder.
 
 | # | Pattern | Key Benefit | File |
 |---|---------|-------------|------|
@@ -20,5 +20,6 @@
 | 14 | [Agent Communication](../patterns/14-agent-communication-and-memory.md) | 3 protocols: Discord Bus + ACP Spawn + File-Based | `14-agent-communication-and-memory.md` |
 | 15 | [Protocol Comparison](../patterns/15-protocol-comparison.md) | When to use Discord vs ACP vs Files | `15-protocol-comparison.md` |
 | 16 | [Engineering Deep Dive](../patterns/16-engineering-details-discord-vs-acp.md) | Context windows, token flow, session mechanics | `16-engineering-details-discord-vs-acp.md` |
+| 17 | [Gateway Topology](../patterns/17-gateway-topology.md) | One gateway per machine, never per agent | `17-gateway-topology.md` |
 
 *Built with [OpenClaw](https://openclaw.ai) + [Claude Code](https://claude.ai/claude-code). All patterns validated in production with 8 agents across 2 projects.*
