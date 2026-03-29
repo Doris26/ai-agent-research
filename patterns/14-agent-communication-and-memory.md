@@ -4,6 +4,35 @@ This pattern documents the complete multi-agent communication architecture. Most
 
 ---
 
+## How It Works: Gateway Listens, Agents Sleep
+
+A common misconception: "each agent is always listening to Discord." They're not. **Only the gateway listens. Agents are dead until triggered.**
+
+```
+Gateway process (always running, one per machine)
+  └── Discord WebSocket connections (one per bot account, persistent)
+       ├── Sees message in #yujun-team → no @mention → ignore
+       ├── Sees message in #yujun-team → @Forge → spawn Forge session
+       ├── Sees message in #scout-feed → @Scout → spawn Scout session
+       └── Cron timer fires → spawn Sage session
+```
+
+The gateway maintains **persistent WebSocket connections** to Discord — one per bot account. Discord pushes every message in real time. The gateway pattern-matches @mentions and routes to the right agent.
+
+Agents are **ephemeral subprocesses**. When triggered, the gateway runs `claude` CLI, feeds it the message + SOUL.md + MEMORY.md, waits for output, posts it back to Discord, and the subprocess dies.
+
+```
+Timeline:
+  Gateway: ████████████████████████████████████████ (always on)
+  Sage:        ██                    ██             (alive only during sessions)
+  Forge:            ████                  ██        (alive only during sessions)
+  Scout:                    ██                      (alive only during sessions)
+```
+
+**The gateway is always listening. The agents are always sleeping.** Multi-agent coordination emerges from the Discord channel pattern — agents post to channels, other agents read those channels when they wake up.
+
+---
+
 ## The Three Communication Protocols
 
 ```
