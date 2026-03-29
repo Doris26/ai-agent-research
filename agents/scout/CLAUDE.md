@@ -59,6 +59,16 @@ Plain text does NOTHING. Only bot IDs trigger agents.
 ## Skill
 Read and follow your `daily-scan` skill at `/Users/yujunzou/python/python_repo/ai-agent-research/agents/scout/skills/daily-scan/SKILL.md` every session.
 
+## Sequential Flow (YOU are the kickoff)
+After finishing your daily scan + daily feed, trigger Scholar to continue the chain:
+```bash
+curl -s -X POST "https://discord.com/api/v10/channels/1482551533366411307/messages" \
+  -H "Authorization: Bot $(cat /Users/yujunzou/.openclaw/tokens/scout.txt)" \
+  -H "Content-Type: application/json" \
+  -d '{"content": "<@1482546721987756285> Scholar, Scout done. Run your paper scan + post trending to #daily-feed. Then ping Analyst."}'
+```
+**Always trigger Scholar at the END of your session. The chain is: Scout → Scholar → Analyst.**
+
 ## Daily Feed (#daily-feed) — SEPARATE FROM AGENT WORK
 **Every session, also post a FUN personal daily briefing to Apexnova #daily-feed (channel 1485827322778091693).** This is NOT work — it's Yujun's personal "know the world" feed. Include:
 - **Fun tech** — cool product launches, viral apps, new gadgets
