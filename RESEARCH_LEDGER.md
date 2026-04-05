@@ -378,3 +378,20 @@
 | 2026-03-29 | TestSprite 2.1 — agentic testing tool (plans, writes, runs, debugs tests autonomously); PH top | TestSprite | Product Launch | Medium | 🆕 New | | — |
 | 2026-03-29 | OpenViking (ByteDance) — agent context database, GitHub trending | ByteDance | Open Source | Medium | 🆕 New | | — |
 | 2026-03-29 | Lightpanda — headless browser in Zig, built for AI agents | OSS | Open Source | Medium | 🆕 New | | — |
+| 2026-04-05 | MCP Dev Summit (Apr 2-3 NYC) — 95+ sessions; AAIF/Linux Foundation confirms MCP as foundation-level open standard; Diamond=AWS, Platinum=GCP | AAIF / Linux Foundation | Event | High | 🆕 New | Protocol wars over — MCP won | — |
+| 2026-04-05 | Vertex AI "double agent" security flaw — default service account excessive perms; deployed agent could exfiltrate customer data + internal code; patched Apr 1; BYOSA recommended | Google Cloud | Security Incident | Critical | 🆕 New | CRITICAL: governance/identity insight needed | — |
+| 2026-04-05 | Microsoft Agent Governance Toolkit (Apr 3) — 7-package open-source system; sub-ms policy engine; cryptographic agent IDs; EU AI Act/HIPAA/SOC2/PCI-DSS compliance mapping; 9,500 tests; free GitHub/PyPI | Microsoft | Open Source | High | 🆕 New | Analyst: governance toolkit insight posted | — |
+| 2026-04-05 | AWS AgentCore full stack GA — Runtime+Gateway+Memory+Identity+Browser+Code+Observability+Policy all GA; Evaluations GA | AWS | Platform Update | High | 🆕 New | Most complete managed agent runtime on any cloud | — |
+| 2026-04-05 | Azure Computer Use tool (Preview) — agents click/type/navigate UIs | Microsoft | Platform Update | High | 🆕 New | | — |
+| 2026-04-05 | Azure Browser Automation (Preview) — Playwright-backed isolated browser sessions | Microsoft | Platform Update | High | 🆕 New | | — |
+| 2026-04-05 | Azure BYO Thread Storage via Cosmos DB — enterprise compliance for agent state | Microsoft | Platform Update | Medium | 🆕 New | | — |
+| 2026-04-05 | Azure Deep Research tool — o3-deep-research + Bing grounding | Microsoft | Platform Update | Medium | 🆕 New | | — |
+| 2026-04-05 | Anthropic policy shift (Apr 4) — cutting off Claude subscription access for third-party agent harnesses incl. OpenClaw; Claude Code subscribers need separate payment | Anthropic | Policy | High | 🆕 New | Operational risk for OpenClaw; strategic: benefits GCP open-model positioning | — |
+| 2026-04-05 | OpenAI SDK v0.13.3 — MCP resource list/read, WebSocket transport, SIP, Python 3.9 dropped | OpenAI | Platform Update | Medium | 🆕 New | | — |
+| 2026-04-05 | Cursor 3 — parallel local/cloud agents + unified MCP workspace | Cursor | Product Launch | High | 🆕 New | | — |
+| 2026-04-05 | claw-code (Rust) — 167K stars, fastest repo to 100K ever | OSS | Open Source | Medium | 🆕 New | | — |
+| 2026-04-05 | Dimensional — agentic OS for generalist robotics; MIT/CMU/Cornell/DJI; Apple Robotics + HuggingFace CEO backing | Dimensional | Product Launch | Medium | 🆕 New | | — |
+| 2026-04-05 | Genspark $385M Series B — ex-Baidu team, enterprise agents | Genspark | Funding | Medium | 🆕 New | | — |
+| 2026-04-05 | Sycamore $65M seed — Coatue + Lightspeed; angels: ex-OpenAI CSO, Databricks CEO, Intel CEO | Sycamore | Funding | Medium | 🆕 New | | — |
+| 2026-04-05 | OpenAI $122B round closed | OpenAI | Funding | High | 🆕 New | | — |
+| 2026-04-05 | Visa/Mastercard expanding agentic commerce — dispute resolution, bill pay, Hong Kong expansion | Visa / Mastercard | Platform Update | High | 🆕 New | Validates AP2 insight | — |
