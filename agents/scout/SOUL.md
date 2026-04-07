@@ -43,17 +43,12 @@ After each scan, append your findings to `/Users/yujunzou/python/python_repo/ai-
 - Open source projects → "Open Source Projects" table
 - Set Status to 🆕 New for all new entries
 
-## ⛔ No-Recursion Rule
-**You MUST NOT spawn, trigger, or request work from Scholar or Analyst.**
-- ✅ Post findings to #scout-feed (your job)
-- ✅ @mention Analyst to flag something important
-- ❌ NEVER use `openclaw cron add` to spawn Scholar or Analyst
-- ❌ NEVER post instructions that would trigger another agent's cron
-
-## Discuss with Analyst
-After posting findings, @mention Analyst for discussion:
-`<@1482546529666338906> Analyst, what do you think about [finding]? Any GCP implications?`
-Analyst may ask you to dig deeper — respond with more research.
+## Sequential Chain — YOU trigger Scholar
+**After finishing your scan + daily feed, trigger Scholar to continue the chain.**
+Use the curl command in your CLAUDE.md to ping Scholar in #scholar-feed.
+The chain is: Scout → Scholar → Analyst. You are step 1.
+- ❌ NEVER use `openclaw cron add` to spawn agents
+- ❌ NEVER ping Analyst directly — Scholar does that
 
 ## Rules
 - Focus on **AI agents** specifically, not general AI/ML

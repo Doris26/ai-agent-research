@@ -395,3 +395,18 @@
 | 2026-04-05 | Sycamore $65M seed — Coatue + Lightspeed; angels: ex-OpenAI CSO, Databricks CEO, Intel CEO | Sycamore | Funding | Medium | 🆕 New | | — |
 | 2026-04-05 | OpenAI $122B round closed | OpenAI | Funding | High | 🆕 New | | — |
 | 2026-04-05 | Visa/Mastercard expanding agentic commerce — dispute resolution, bill pay, Hong Kong expansion | Visa / Mastercard | Platform Update | High | 🆕 New | Validates AP2 insight | — |
+| 2026-04-07 | AWS DevOps Agent GA — autonomous incident investigation, 75% lower MTTR, cross-cloud (supports Azure workloads); customers: United Airlines, T-Mobile, WGU | AWS | Platform Update | High | 🆕 New | GCP has zero frontier operational agents | — |
+| 2026-04-07 | AWS Security Agent GA — continuous pen-testing in dev lifecycle; LG CNS: 50% faster testing, 30% lower costs | AWS | Platform Update | High | 🆕 New | GCP has no equivalent | — |
+| 2026-04-07 | AWS AgentCore Evaluations GA — ground truth benchmarking, behavioral assertions, custom evaluators via Lambda | AWS | Platform Update | High | 🆕 New | | — |
+| 2026-04-07 | Anthropic OpenClaw policy fallout — 50x cost increases for third-party harness users; credits expire Apr 17; Axios/VentureBeat/TechCrunch/TNW coverage | Anthropic | Policy | High | 🆕 New | Supply risk for GCP customers running Claude via Agent Engine | — |
+| 2026-04-07 | Unit 42 full disclosure of Vertex AI double-agent flaw — default P4SA service account excessive perms; agent exfiltration path confirmed | Palo Alto Networks / Google | Security | Critical | 🆕 New | Reputational escalation of Apr 1 disclosure | — |
+| 2026-04-07 | Microsoft Governance Toolkit integrations — LangChain, OpenAI Agents, Haystack, Azure; becoming cross-platform standard | Microsoft | Platform Update | High | 🆕 New | Risk: becomes de facto governance layer for ADK too | — |
+| 2026-04-07 | MCP SDK V2 announced — "Path to V2" talk at Dev Summit by Anthropic's Max Isbey; OpenAI "MCP x MCP" keynote | Anthropic / OpenAI | Standard | High | 🆕 New | Scholar deep-dive needed when spec published | — |
+| 2026-04-07 | Paperclip — 44.9K stars in 3 weeks; hierarchical multi-agent system with budgets, reporting lines, audit trails | OSS | Open Source | High | 🆕 New | Enterprise agent org chart pattern — ADK lacks governance primitives | — |
+| 2026-04-07 | Azure SRE Agent pricing effective Apr 15 (per AAU/1M tokens) | Microsoft | Platform Update | Medium | 🆕 New | | — |
+| 2026-04-07 | Azure Agent 365 + M365 E7 Frontier Suite GA May 1 | Microsoft | Platform Update | Medium | 🆕 New | | — |
+| 2026-04-07 | Qualys Agent Val — AI agent that finds + auto-fixes security problems | Qualys | Product Launch | Medium | 🆕 New | | — |
+| 2026-04-07 | NVIDIA Agent Toolkit — signed Adobe, Salesforce, SAP + 14 others at GTC | NVIDIA | Ecosystem | High | 🆕 New | | — |
+| 2026-04-07 | 97% of enterprises expect major AI agent security incident this year | Industry Survey | Market Signal | High | 🆕 New | Validates urgency of GCP governance response | — |
+| 2026-04-07 | Flowise max-severity flaw actively exploited — open-source AI platform | Flowise | Security | Medium | 🆕 New | | — |
+| 2026-04-07 | Agentic AI funding YTD: $2.66B across 44 rounds (142.6% rise vs 2025) | Industry | Funding | High | 🆕 New | | — |
