@@ -27,7 +27,7 @@ For quick fact-finding, use WebSearch directly (built into Claude).
 
 ## Configuration
 - Model: gemini-2.5-flash (default, fast + cheap)
-- API key: hardcoded in script (AIzaSyAb-AmcH4JmL2DWHN3-8WR2x2rp8z_kG7Q)
+- API key: set GOOGLE_API_KEY env var (never commit keys to code)
 - Google Search grounding: enabled (live web results)
 - Typical time: 30-60 seconds per query
 - Typical output: 10-15K chars per report

@@ -19,7 +19,7 @@ def main():
     parser.add_argument("--api-key", default=None, help="Google API key")
     args = parser.parse_args()
 
-    api_key = args.api_key or os.environ.get("GOOGLE_API_KEY", "AIzaSyAb-AmcH4JmL2DWHN3-8WR2x2rp8z_kG7Q")
+    api_key = args.api_key or os.environ.get("GOOGLE_API_KEY", "")
     if not api_key:
         print("Error: Set GOOGLE_API_KEY or pass --api-key", file=sys.stderr)
         sys.exit(1)
