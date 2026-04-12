@@ -46,12 +46,15 @@ Rules:
 - Audio duration must match scene duration
 - QA: no noise, correct voice, fits timing
 
-### Step 4: Generate Video (Seedance / Wan2.1)
+### Step 4: Generate Video (Seedance / Wan2.1 / Static)
 - One video per storyboard scene
-- Clean → Seedance 1.5 Pro (mute original audio)
-- Explicit → Wan2.1 14B fp16 on ComfyUI (H100 GPU, no filter)
+- **3 modes based on storyboard `video_type`:**
+  - `STATIC` → just show image with Ken Burns effect (slow zoom/pan via FFmpeg). Best for narration-only scenes, close-ups, establishing shots. Cheapest + fastest, no API needed.
+  - `SEEDANCE` → Seedance 1.5 Pro for clean scenes with motion (mute original audio)
+  - `WAN` → Wan2.1 14B fp16 on ComfyUI (H100 GPU, no filter) for explicit scenes
+- Ken Burns FFmpeg command: `ffmpeg -loop 1 -i image.png -vf "zoompan=z='min(zoom+0.001,1.3)':d=125:s=1024x1024" -t 5 -c:v libx264 output.mp4`
 - Video duration = storyboard scene duration
-- QA: motion, face stable, no artifacts, content filter retry
+- QA: motion (if Seedance/Wan), face stable, no artifacts, content filter retry
 
 ### Step 5: Mix Per Scene (FFmpeg)
 - Combine: video (muted) + generated audio + SFX → one clip per scene
