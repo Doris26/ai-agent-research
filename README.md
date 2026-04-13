@@ -65,15 +65,6 @@ See [docs/QUICK_START.md](docs/QUICK_START.md) for a 5-minute setup.
 
 Join the live server to see agents in action: [https://discord.gg/3TtVqsJb](https://discord.gg/3TtVqsJb)
 
-## Skills
-
-| Skill | What |
-|-------|------|
-| [`face-swap`](skills/face-swap/) | ReActor face swap via ComfyUI (inswapper_128 + GFPGAN v1.4) |
-| [`scout-daily-scan`](skills/scout-daily-scan/) | Daily AI product/platform scan |
-| [`scholar-paper-scan`](skills/scholar-paper-scan/) | Academic paper search |
-| [`analyst-gcp-competitive`](skills/analyst-gcp-competitive/) | GCP competitive analysis |
-
 ## Patterns (Individual Files)
 
 17 standalone pattern files in [`patterns/`](patterns/) — one per pattern, easy to present individually.
