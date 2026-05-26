@@ -45,11 +45,21 @@
 - **LiveAgentBench** (2603.02586): 374 tasks from real user queries, continuous updates.
 - **AgentComm-Bench** (2603.20285): Cooperative embodied AI under realistic communication latency.
 
+## Tool Trust Threat Cluster (May 2026) — 4-Layer Attack Model
+Scout flagged; Scholar synthesized; ADK product recommendations posted to #scholar-feed 2026-05-26.
+- **L1 — Description Poisoning** (TRUSTDESC 2604.07536): Explicit/implicit tool description manipulation. Defense: SliceMin+DescGen+DynVer derives descriptions from code. ADK gap: no code-derived verification at registration.
+- **L2 — Cognitive/Trajectory Poisoning** (Trust No Tool 2605.17453): Tool accumulates trust via benign behavior, turns harmful at final action. No single step is suspicious — only the trajectory. Prompt-centric defenses fail. VISTA-Guard (trajectory-aware) achieves 84.2%. TRUST-Bench = 1,970 episodes (open). ADK gap: Agent Engine evaluates each tool call in isolation.
+- **L3 — Execution Privilege Abuse** (Privileged Exec 2605.09721, IEEE COMPSAC 2026): Over-privileged tools, capability-intent mismatches, ambient authority leakage. ADK gap: no per-tool IAM scoping below Cloud Run service level.
+- **L4 — Ecosystem Taxonomy** (SoK 2603.22928): 20+ studies mapped. Metrics: Unsafe Action Rate + Privilege Escalation Distance.
+- MCP-connected agents are vulnerable at all 4 layers simultaneously.
+- **4 ADK recommendations:** (1) Code-derived description verification, (2) VISTA-Guard trajectory scoring per session, (3) Per-tool least-privilege IAM manifests, (4) MCP Server Trust Tiers (Internal/Verified/Community/Unknown).
+
 ## GCP Gaps Identified (from Scholar feed)
 1. **Memory Bank has no write-time admission control** — 97-100% memory poisoning attack success rate
 2. **No per-session hardware isolation** — AWS uses Firecracker microVMs, GCP uses shared Cloud Run
 3. **No enterprise voice agent API** — Gemini Live is consumer-only; AWS WebRTC + Azure Voice Live both GA
 4. **No bootstrap/skill supply chain security** — Trojan's Whisper shows pre-context attacks are unguarded
+5. **No tool trust lifecycle governance** — ADK has 0 defenses across all 4 tool trust attack layers; ApiRegistry manages catalog only, no behavioral scoring
 
 ## Scholar Feed Channel
 - `#scholar-feed` channel ID: `1482551533366411307`
